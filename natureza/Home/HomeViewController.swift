@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 class HomeViewController: UIViewController {
     
@@ -19,8 +20,18 @@ class HomeViewController: UIViewController {
         button.backgroundColor = .lightGray
         button.layer.cornerRadius = 30
         button.titleLabel?.font = .systemFont(ofSize: 18)
+        button.addTarget(self, action: #selector(openCamera), for: .touchUpInside)
         return button
     }()
+    
+    @objc func openCamera(sender: UIButton!) {
+        print("Button tapped")
+        let vc = CameraViewController()
+        vc.modalPresentationStyle = .fullScreen
+        navigationController?.present(vc, animated: true, completion: nil)
+     }
+    
+   
     
     lazy var homeCollectionView: HomeCollectionView = {
         let collectionView = HomeCollectionView()
@@ -40,7 +51,7 @@ class HomeViewController: UIViewController {
    
   }
     
- // Funções para setar a tela
+ // Funções para setar as constraints da view
     
     private func setupOpenCameraButton() {
         view.addSubview(openCameraButton)
