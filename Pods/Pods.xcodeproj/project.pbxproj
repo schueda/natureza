@@ -7,75 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F4EBAB81CC1E9FE60ED786AB72F1E13 /* CKFPhotoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C16FE6054D43C07FC68946C8C936EA3 /* CKFPhotoSession.swift */; };
-		22F16576E2542964F2DF3CBDFD791EAA /* Pods-natureza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DE5342DBF2AC5F239CCF17C438F4A /* Pods-natureza-dummy.m */; };
-		3DC7D088948CB27046214561DDD678DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		652BBA78FE5284FB28DA1BD92E98F8BB /* CKFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A01BF54AAFEFC25B5662EC1C37BE03 /* CKFUtils.swift */; };
-		773EA5C5D836ABA9819A494BD8F992B0 /* CKFSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3CCC46A97D87D496C9C282B464C5E /* CKFSession.swift */; };
-		79D6AF8398586319B47241D262919FB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		7BD6138BA55231277D50801C698E2799 /* CKFGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED20EADA7969D6F42DB999E31FE4630C /* CKFGridView.swift */; };
-		8A718FF493D1298AC841A0EA49B884C9 /* Pods-natureza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE33689939F431E59E5B00490FB1BB45 /* Pods-natureza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C95A5BC5D124E7B2DA6D2AF7F7CEFA6 /* CKFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9734814CD5E2A5F01FEA174F5DD2891 /* CKFError.swift */; };
-		A2D169E26727632882BF673D52541EC4 /* CameraKit-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E21AAACD78215B0DCB4BE79390D0366A /* CameraKit-iOS-dummy.m */; };
-		A719954D37FC11CD25681BF62914855C /* CKFPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C352C8A2045009DEFD74F379BE10F /* CKFPreviewView.swift */; };
-		BA18B402B179D93980DCF34872E19FAB /* CKFVideoSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC840CE4EE7462573433E5898117D9A7 /* CKFVideoSession.swift */; };
-		CAA01C92DAF24BC613C18B9D47D5C325 /* CameraKit-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F517B07DFBE871258D655E4706C738FD /* CameraKit-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E1692E13FC803F0EA41DED47AD9002E /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B108ACC1FF4D7DC2631A77513870DCF8 /* CameraManager.swift */; };
+		26F14DA282DB13CF87F5164DB21D4300 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3BB7DF99636E2EE2ED4D91BD99B47880 /* Pods-natureza-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 502DE5342DBF2AC5F239CCF17C438F4A /* Pods-natureza-dummy.m */; };
+		76F47FABD26EBC1E36420F9FE50125B5 /* Pods-natureza-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE33689939F431E59E5B00490FB1BB45 /* Pods-natureza-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		97795A5825CF2376BE09779EF962DD68 /* CameraManager-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 74BEB84A3B0588616F1CCC10CDE9DB3D /* CameraManager-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA06E166C1F2B8C8A8578D9F0E8E160B /* CameraManager-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D39A0676AA4D885614790C146CA97CC7 /* CameraManager-dummy.m */; };
+		BEED700ECA6E2A4D1257D0BCEBC058A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4B6BBB948F0F4B7B9DAB44B368AA239A /* PBXContainerItemProxy */ = {
+		EA925097B466636C1377FC98D9CEC64D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B4EF47FEED3C3CEAF89306D1AE3851CB;
-			remoteInfo = "CameraKit-iOS";
+			remoteGlobalIDString = 8BB91AB80BFCF849745808EDF709B66D;
+			remoteInfo = CameraManager;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		198FCB4505C78AFFE3E26716572BDD53 /* Pods-natureza-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-natureza-frameworks.sh"; sourceTree = "<group>"; };
-		2F018A7ABE19F17F1C924707665F94C5 /* CameraKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraKit-iOS-prefix.pch"; sourceTree = "<group>"; };
+		1E45A360335DFDC846BDF8F709C3A284 /* CameraManager */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CameraManager; path = CameraManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2592F375CA95D55426222B0B53CCEC2A /* CameraManager-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraManager-prefix.pch"; sourceTree = "<group>"; };
 		502DE5342DBF2AC5F239CCF17C438F4A /* Pods-natureza-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-natureza-dummy.m"; sourceTree = "<group>"; };
+		5641EF11B777623511ADCFC4F938B6E3 /* CameraManager-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CameraManager-Info.plist"; sourceTree = "<group>"; };
+		58A69B500210B6073E65A47EFA69B2D6 /* CameraManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CameraManager.debug.xcconfig; sourceTree = "<group>"; };
 		614F95CFD3C5C1CDE56733036335D80E /* Pods-natureza-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-natureza-acknowledgements.markdown"; sourceTree = "<group>"; };
 		6B7C4B541537F70C9C2C182D9BCE96E5 /* Pods-natureza-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natureza-Info.plist"; sourceTree = "<group>"; };
-		6C16FE6054D43C07FC68946C8C936EA3 /* CKFPhotoSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFPhotoSession.swift; path = CameraKit/CameraKit/CKFPhotoSession.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74BEB84A3B0588616F1CCC10CDE9DB3D /* CameraManager-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraManager-umbrella.h"; sourceTree = "<group>"; };
 		7E6941A83902EF727C8D6B8C601F9D5A /* Pods-natureza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natureza.debug.xcconfig"; sourceTree = "<group>"; };
-		8BA3CCC46A97D87D496C9C282B464C5E /* CKFSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFSession.swift; path = CameraKit/CameraKit/CKFSession.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A8A98D1BEAE7D9E8AE5C9394BD8DBA69 /* CameraKit-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CameraKit-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		AA3586ED99F35E56963C51A73CBA06C4 /* CameraKit-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "CameraKit-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B108ACC1FF4D7DC2631A77513870DCF8 /* CameraManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CameraManager.swift; path = Sources/CameraManager.swift; sourceTree = "<group>"; };
 		B2E9CEFC201C6ACFF2131D23F9C346BD /* Pods-natureza.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-natureza.modulemap"; sourceTree = "<group>"; };
-		B46C352C8A2045009DEFD74F379BE10F /* CKFPreviewView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFPreviewView.swift; path = CameraKit/CameraKit/CKFPreviewView.swift; sourceTree = "<group>"; };
-		B4EFDCC837145D207C3185DBD77D18B2 /* CameraKit-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CameraKit-iOS-Info.plist"; sourceTree = "<group>"; };
 		BF1CF49EF2F9E9C1E5DD322A50E45209 /* Pods-natureza */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-natureza"; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6253FFE2C93507A6AFE11E1C37E1E8D /* CameraKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "CameraKit-iOS.modulemap"; sourceTree = "<group>"; };
-		C9734814CD5E2A5F01FEA174F5DD2891 /* CKFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFError.swift; path = CameraKit/CameraKit/CKFError.swift; sourceTree = "<group>"; };
+		C435741C3280AB30E6AEE8BDB7FBCD83 /* CameraManager.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CameraManager.modulemap; sourceTree = "<group>"; };
 		CE94265F23A9A9DCC1B372F34B88DB1A /* Pods-natureza-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-natureza-acknowledgements.plist"; sourceTree = "<group>"; };
-		DC840CE4EE7462573433E5898117D9A7 /* CKFVideoSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFVideoSession.swift; path = CameraKit/CameraKit/CKFVideoSession.swift; sourceTree = "<group>"; };
-		E21AAACD78215B0DCB4BE79390D0366A /* CameraKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CameraKit-iOS-dummy.m"; sourceTree = "<group>"; };
-		E5A01BF54AAFEFC25B5662EC1C37BE03 /* CKFUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFUtils.swift; path = CameraKit/CameraKit/CKFUtils.swift; sourceTree = "<group>"; };
+		D36155E7F1A2E7DEDC19F680BAEC84B0 /* CameraManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CameraManager.release.xcconfig; sourceTree = "<group>"; };
+		D39A0676AA4D885614790C146CA97CC7 /* CameraManager-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CameraManager-dummy.m"; sourceTree = "<group>"; };
 		ECE124F17C560CEBAA0F17F69B2F363E /* Pods-natureza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-natureza.release.xcconfig"; sourceTree = "<group>"; };
-		ED20EADA7969D6F42DB999E31FE4630C /* CKFGridView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CKFGridView.swift; path = CameraKit/CameraKit/CKFGridView.swift; sourceTree = "<group>"; };
-		F20D0F475AD94970E52A96B1F84EC209 /* CameraKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F517B07DFBE871258D655E4706C738FD /* CameraKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CameraKit-iOS-umbrella.h"; sourceTree = "<group>"; };
 		FE33689939F431E59E5B00490FB1BB45 /* Pods-natureza-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-natureza-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		844C2583149A6AFF5D23A01832A9566E /* Frameworks */ = {
+		628513ED4CBE2030FACAA829FC24A82B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DC7D088948CB27046214561DDD678DC /* Foundation.framework in Frameworks */,
+				26F14DA282DB13CF87F5164DB21D4300 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8BDDE862CEF30A0505E0B17509E84E66 /* Frameworks */ = {
+		EDE510EC2FB9D35A034D082B26DA79FC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D6AF8398586319B47241D262919FB7 /* Foundation.framework in Frameworks */,
+				BEED700ECA6E2A4D1257D0BCEBC058A0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,12 +87,30 @@
 			path = "Target Support Files/Pods-natureza";
 			sourceTree = "<group>";
 		};
+		2408B8A37038EFF103095057FEED7FC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4AD1DDEA6CAB760AEBC2CD9085D8412C /* CameraManager */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2C4B84B7AD7B73F8F26F81D43192B75B /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				129B1E4022435455F7C26A53FA000C77 /* Pods-natureza */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4AD1DDEA6CAB760AEBC2CD9085D8412C /* CameraManager */ = {
+			isa = PBXGroup;
+			children = (
+				B108ACC1FF4D7DC2631A77513870DCF8 /* CameraManager.swift */,
+				F1AD4E69D20BFB7DFB98F655CF65C64E /* Support Files */,
+			);
+			name = CameraManager;
+			path = CameraManager;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -115,27 +121,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8FBD7D4ECB1FB24BE5D58887E0DC43D2 /* Pods */ = {
+		7CE7072BDA4A459CA10ED1CF380D8F81 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAC7083FAF440F0576D091EC5CAFD8D2 /* CameraKit-iOS */,
+				1E45A360335DFDC846BDF8F709C3A284 /* CameraManager */,
+				BF1CF49EF2F9E9C1E5DD322A50E45209 /* Pods-natureza */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		CAC7083FAF440F0576D091EC5CAFD8D2 /* CameraKit-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				C9734814CD5E2A5F01FEA174F5DD2891 /* CKFError.swift */,
-				ED20EADA7969D6F42DB999E31FE4630C /* CKFGridView.swift */,
-				6C16FE6054D43C07FC68946C8C936EA3 /* CKFPhotoSession.swift */,
-				B46C352C8A2045009DEFD74F379BE10F /* CKFPreviewView.swift */,
-				8BA3CCC46A97D87D496C9C282B464C5E /* CKFSession.swift */,
-				E5A01BF54AAFEFC25B5662EC1C37BE03 /* CKFUtils.swift */,
-				DC840CE4EE7462573433E5898117D9A7 /* CKFVideoSession.swift */,
-				D37F16FAC750F89DAFB3CEC0348BC110 /* Support Files */,
-			);
-			path = "CameraKit-iOS";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -143,8 +135,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				8FBD7D4ECB1FB24BE5D58887E0DC43D2 /* Pods */,
-				E9656CCC663B64F49E066B5F3473839E /* Products */,
+				2408B8A37038EFF103095057FEED7FC9 /* Pods */,
+				7CE7072BDA4A459CA10ED1CF380D8F81 /* Products */,
 				2C4B84B7AD7B73F8F26F81D43192B75B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -157,83 +149,74 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D37F16FAC750F89DAFB3CEC0348BC110 /* Support Files */ = {
+		F1AD4E69D20BFB7DFB98F655CF65C64E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C6253FFE2C93507A6AFE11E1C37E1E8D /* CameraKit-iOS.modulemap */,
-				E21AAACD78215B0DCB4BE79390D0366A /* CameraKit-iOS-dummy.m */,
-				B4EFDCC837145D207C3185DBD77D18B2 /* CameraKit-iOS-Info.plist */,
-				2F018A7ABE19F17F1C924707665F94C5 /* CameraKit-iOS-prefix.pch */,
-				F517B07DFBE871258D655E4706C738FD /* CameraKit-iOS-umbrella.h */,
-				A8A98D1BEAE7D9E8AE5C9394BD8DBA69 /* CameraKit-iOS.debug.xcconfig */,
-				AA3586ED99F35E56963C51A73CBA06C4 /* CameraKit-iOS.release.xcconfig */,
+				C435741C3280AB30E6AEE8BDB7FBCD83 /* CameraManager.modulemap */,
+				D39A0676AA4D885614790C146CA97CC7 /* CameraManager-dummy.m */,
+				5641EF11B777623511ADCFC4F938B6E3 /* CameraManager-Info.plist */,
+				2592F375CA95D55426222B0B53CCEC2A /* CameraManager-prefix.pch */,
+				74BEB84A3B0588616F1CCC10CDE9DB3D /* CameraManager-umbrella.h */,
+				58A69B500210B6073E65A47EFA69B2D6 /* CameraManager.debug.xcconfig */,
+				D36155E7F1A2E7DEDC19F680BAEC84B0 /* CameraManager.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/CameraKit-iOS";
-			sourceTree = "<group>";
-		};
-		E9656CCC663B64F49E066B5F3473839E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				F20D0F475AD94970E52A96B1F84EC209 /* CameraKit_iOS.framework */,
-				BF1CF49EF2F9E9C1E5DD322A50E45209 /* Pods-natureza */,
-			);
-			name = Products;
+			path = "../Target Support Files/CameraManager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		C04F22CD1EFA47294E6A6DB7104BD97C /* Headers */ = {
+		2769DD0761190DD06A1C859B1ABC9FBA /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAA01C92DAF24BC613C18B9D47D5C325 /* CameraKit-iOS-umbrella.h in Headers */,
+				97795A5825CF2376BE09779EF962DD68 /* CameraManager-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB081255F602D8768D96FA5E3B13573B /* Headers */ = {
+		7A78A6F629F077B4E49C1B09B5CA1332 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A718FF493D1298AC841A0EA49B884C9 /* Pods-natureza-umbrella.h in Headers */,
+				76F47FABD26EBC1E36420F9FE50125B5 /* Pods-natureza-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B4EF47FEED3C3CEAF89306D1AE3851CB /* CameraKit-iOS */ = {
+		8BB91AB80BFCF849745808EDF709B66D /* CameraManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 62E458AF470020AFA849F563F1DFA254 /* Build configuration list for PBXNativeTarget "CameraKit-iOS" */;
+			buildConfigurationList = 7C17BEDCBFFC6BC1C4E6347D239F1338 /* Build configuration list for PBXNativeTarget "CameraManager" */;
 			buildPhases = (
-				C04F22CD1EFA47294E6A6DB7104BD97C /* Headers */,
-				1B2428F2369EA69AF0F8C95A6F02994E /* Sources */,
-				8BDDE862CEF30A0505E0B17509E84E66 /* Frameworks */,
-				BBCDE3448DEAA2B9396562502E790BB9 /* Resources */,
+				2769DD0761190DD06A1C859B1ABC9FBA /* Headers */,
+				41832C3B6E7E3091CA1340D3A97D85C6 /* Sources */,
+				628513ED4CBE2030FACAA829FC24A82B /* Frameworks */,
+				1AC192C5DAC5DFEAE4734313AFD94624 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "CameraKit-iOS";
-			productName = CameraKit_iOS;
-			productReference = F20D0F475AD94970E52A96B1F84EC209 /* CameraKit_iOS.framework */;
+			name = CameraManager;
+			productName = CameraManager;
+			productReference = 1E45A360335DFDC846BDF8F709C3A284 /* CameraManager */;
 			productType = "com.apple.product-type.framework";
 		};
 		CBED355388D3015D859CC3CA087762FA /* Pods-natureza */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1AC057E86C78AE3E6B8F10C93F88CDBD /* Build configuration list for PBXNativeTarget "Pods-natureza" */;
+			buildConfigurationList = AB440DE6272EE2316DBC1E31C44C0FB0 /* Build configuration list for PBXNativeTarget "Pods-natureza" */;
 			buildPhases = (
-				DB081255F602D8768D96FA5E3B13573B /* Headers */,
-				B2724B2E29295C43FDA7F7066AA653A6 /* Sources */,
-				844C2583149A6AFF5D23A01832A9566E /* Frameworks */,
-				8E7A912CF8AE332A84A6F81A7BC7385E /* Resources */,
+				7A78A6F629F077B4E49C1B09B5CA1332 /* Headers */,
+				ABB23AA2D05B932CD0FFEF1E29A6E46B /* Sources */,
+				EDE510EC2FB9D35A034D082B26DA79FC /* Frameworks */,
+				CE1F9C1062AA7F2E192317381562B072 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4C28F3F1B03FD7865EE3533FDAC078B2 /* PBXTargetDependency */,
+				EAF4CC4D0D9806231045D1494CD935B4 /* PBXTargetDependency */,
 			);
 			name = "Pods-natureza";
 			productName = Pods_natureza;
@@ -247,7 +230,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -258,25 +241,25 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = E9656CCC663B64F49E066B5F3473839E /* Products */;
+			productRefGroup = 7CE7072BDA4A459CA10ED1CF380D8F81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B4EF47FEED3C3CEAF89306D1AE3851CB /* CameraKit-iOS */,
+				8BB91AB80BFCF849745808EDF709B66D /* CameraManager */,
 				CBED355388D3015D859CC3CA087762FA /* Pods-natureza */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8E7A912CF8AE332A84A6F81A7BC7385E /* Resources */ = {
+		1AC192C5DAC5DFEAE4734313AFD94624 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BBCDE3448DEAA2B9396562502E790BB9 /* Resources */ = {
+		CE1F9C1062AA7F2E192317381562B072 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -286,41 +269,107 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1B2428F2369EA69AF0F8C95A6F02994E /* Sources */ = {
+		41832C3B6E7E3091CA1340D3A97D85C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2D169E26727632882BF673D52541EC4 /* CameraKit-iOS-dummy.m in Sources */,
-				9C95A5BC5D124E7B2DA6D2AF7F7CEFA6 /* CKFError.swift in Sources */,
-				7BD6138BA55231277D50801C698E2799 /* CKFGridView.swift in Sources */,
-				1F4EBAB81CC1E9FE60ED786AB72F1E13 /* CKFPhotoSession.swift in Sources */,
-				A719954D37FC11CD25681BF62914855C /* CKFPreviewView.swift in Sources */,
-				773EA5C5D836ABA9819A494BD8F992B0 /* CKFSession.swift in Sources */,
-				652BBA78FE5284FB28DA1BD92E98F8BB /* CKFUtils.swift in Sources */,
-				BA18B402B179D93980DCF34872E19FAB /* CKFVideoSession.swift in Sources */,
+				0E1692E13FC803F0EA41DED47AD9002E /* CameraManager.swift in Sources */,
+				AA06E166C1F2B8C8A8578D9F0E8E160B /* CameraManager-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2724B2E29295C43FDA7F7066AA653A6 /* Sources */ = {
+		ABB23AA2D05B932CD0FFEF1E29A6E46B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22F16576E2542964F2DF3CBDFD791EAA /* Pods-natureza-dummy.m in Sources */,
+				3BB7DF99636E2EE2ED4D91BD99B47880 /* Pods-natureza-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4C28F3F1B03FD7865EE3533FDAC078B2 /* PBXTargetDependency */ = {
+		EAF4CC4D0D9806231045D1494CD935B4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = "CameraKit-iOS";
-			target = B4EF47FEED3C3CEAF89306D1AE3851CB /* CameraKit-iOS */;
-			targetProxy = 4B6BBB948F0F4B7B9DAB44B368AA239A /* PBXContainerItemProxy */;
+			name = CameraManager;
+			target = 8BB91AB80BFCF849745808EDF709B66D /* CameraManager */;
+			targetProxy = EA925097B466636C1377FC98D9CEC64D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		511769D4110984436218BE56DEF9289E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECE124F17C560CEBAA0F17F69B2F363E /* Pods-natureza.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-natureza/Pods-natureza-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-natureza/Pods-natureza.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9013E209CF2013CE069B9D15BCE6B74B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D36155E7F1A2E7DEDC19F680BAEC84B0 /* CameraManager.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CameraManager/CameraManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CameraManager/CameraManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CameraManager/CameraManager.modulemap";
+				PRODUCT_MODULE_NAME = CameraManager;
+				PRODUCT_NAME = CameraManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -449,7 +498,40 @@
 			};
 			name = Release;
 		};
-		A21DE7F5B937249C94B33DDEE10EB3E0 /* Debug */ = {
+		ABEA3F7303CA59C05C95DE2CF8F1A232 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58A69B500210B6073E65A47EFA69B2D6 /* CameraManager.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/CameraManager/CameraManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/CameraManager/CameraManager-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/CameraManager/CameraManager.modulemap";
+				PRODUCT_MODULE_NAME = CameraManager;
+				PRODUCT_NAME = CameraManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D87429C48F220C4407719DAF178BC3D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E6941A83902EF727C8D6B8C601F9D5A /* Pods-natureza.debug.xcconfig */;
 			buildSettings = {
@@ -486,127 +568,9 @@
 			};
 			name = Debug;
 		};
-		CC3DAE6AA4CC38AF088F872ED8B2D6EC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A8A98D1BEAE7D9E8AE5C9394BD8DBA69 /* CameraKit-iOS.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CameraKit-iOS/CameraKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CameraKit-iOS/CameraKit-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CameraKit-iOS/CameraKit-iOS.modulemap";
-				PRODUCT_MODULE_NAME = CameraKit_iOS;
-				PRODUCT_NAME = CameraKit_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		EFF33A6970FBD07DF85CF20FD34ACA54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECE124F17C560CEBAA0F17F69B2F363E /* Pods-natureza.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-natureza/Pods-natureza-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-natureza/Pods-natureza.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		F3A8684142BBFE66C4FDE9B8407C1B3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA3586ED99F35E56963C51A73CBA06C4 /* CameraKit-iOS.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/CameraKit-iOS/CameraKit-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/CameraKit-iOS/CameraKit-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/CameraKit-iOS/CameraKit-iOS.modulemap";
-				PRODUCT_MODULE_NAME = CameraKit_iOS;
-				PRODUCT_NAME = CameraKit_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1AC057E86C78AE3E6B8F10C93F88CDBD /* Build configuration list for PBXNativeTarget "Pods-natureza" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A21DE7F5B937249C94B33DDEE10EB3E0 /* Debug */,
-				EFF33A6970FBD07DF85CF20FD34ACA54 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -616,11 +580,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		62E458AF470020AFA849F563F1DFA254 /* Build configuration list for PBXNativeTarget "CameraKit-iOS" */ = {
+		7C17BEDCBFFC6BC1C4E6347D239F1338 /* Build configuration list for PBXNativeTarget "CameraManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CC3DAE6AA4CC38AF088F872ED8B2D6EC /* Debug */,
-				F3A8684142BBFE66C4FDE9B8407C1B3F /* Release */,
+				ABEA3F7303CA59C05C95DE2CF8F1A232 /* Debug */,
+				9013E209CF2013CE069B9D15BCE6B74B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB440DE6272EE2316DBC1E31C44C0FB0 /* Build configuration list for PBXNativeTarget "Pods-natureza" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87429C48F220C4407719DAF178BC3D9 /* Debug */,
+				511769D4110984436218BE56DEF9289E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

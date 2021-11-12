@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double CameraKit_iOSVersionNumber;
-FOUNDATION_EXPORT const unsigned char CameraKit_iOSVersionString[];
+FOUNDATION_EXPORT double CameraManagerVersionNumber;
+FOUNDATION_EXPORT const unsigned char CameraManagerVersionString[];
 

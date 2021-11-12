@@ -1,16 +1,19 @@
 import AVFoundation
 import SnapKit
 import UIKit
-import CameraKit_iOS
+import CameraManager
 
 
 
 class CameraViewController: UIViewController {
-
-    let switchCameraButton : UIButton = {
+    
+    let cameraManager = CameraManager()
+    var imageTaken: UIImage?
+    var confirmPhotoView: UIImageView?
+    
+    var switchCameraButton : UIButton = {
         let button = UIButton()
         let image = UIImage(named: "switchcamera")?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -26,48 +29,66 @@ class CameraViewController: UIViewController {
         imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
         button.tintColor = .white
         button.layer.cornerRadius = 25
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(takePhoto), for: .touchUpInside)
         return button
     }()
     
- override func viewDidLoad() {
+    @objc func takePhoto(){
+    
+        cameraManager.capturePictureWithCompletion { result in
+            switch result {
+            case .success(let content):
+                self.imageTaken = content.asImage
+            
+            case .failure:
+                print("couldnt take pic")
+            }
+        }
+  }
+    
+   
+    
+    
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         setupCameraView()
         setupCaptureButton()
-
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     
     func setupCameraView(){
-        let session = CKFPhotoSession()
-        let preview = CKFPreviewView()
-        preview.translatesAutoresizingMaskIntoConstraints = false
-        preview.session = session
-        view.addSubview(preview)
         
-        preview.snp.makeConstraints { make in
-            make.height.greaterThanOrEqualToSuperview()
-            make.width.greaterThanOrEqualToSuperview()
-            make.center.equalToSuperview()
-            
+        let newView = UIView()
+        view.addSubview(newView)
+        newView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
-   }
+        
+        let camera = cameraManager
+        camera.addPreviewLayerToView(newView)
+        
+        
+    }
     
     func setupCaptureButton() {
         view.addSubview(captureImageButton)
         captureImageButton.snp.makeConstraints { make in
             make.height.equalTo(80)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-48)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-36)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
-       }
+    }
     
-   
-
+    
+    
 }
