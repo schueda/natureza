@@ -1,15 +1,12 @@
 import AVFoundation
 import SnapKit
 import UIKit
-import CameraManager
+import CameraKit_iOS
+
 
 
 class CameraViewController: UIViewController {
 
-    
-    let cameraView: UIView?
-   
-    
     let switchCameraButton : UIButton = {
         let button = UIButton()
         let image = UIImage(named: "switchcamera")?.withRenderingMode(.alwaysTemplate)
@@ -21,53 +18,55 @@ class CameraViewController: UIViewController {
     
     let captureImageButton : UIButton = {
         let button = UIButton()
-        let image = UIImage(named: "circle.fill")?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "circle")?.withRenderingMode(.alwaysTemplate)
+        button.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         button.tintColor = .white
         button.layer.cornerRadius = 25
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    let cameraManager = CameraManager()
-    
-    
- 
-    
-    
-    
-   override func viewDidLoad() {
+ override func viewDidLoad() {
         super.viewDidLoad()
-        cameraManager.addPreviewLayerToView(self.cameraView)
+        setupCameraView()
+        setupCaptureButton()
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidLoad()
-      
-        print("started")
-       
-        
-    }
+
     
     func setupCameraView(){
+        let session = CKFPhotoSession()
+        let preview = CKFPreviewView()
+        preview.translatesAutoresizingMaskIntoConstraints = false
+        preview.session = session
+        view.addSubview(preview)
         
-        
-        
-        
-    }
+        preview.snp.makeConstraints { make in
+            make.height.greaterThanOrEqualToSuperview()
+            make.width.greaterThanOrEqualToSuperview()
+            make.center.equalToSuperview()
+            
+        }
+   }
     
     func setupCaptureButton() {
         view.addSubview(captureImageButton)
         captureImageButton.snp.makeConstraints { make in
-            make.height.equalTo(60)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.height.equalTo(80)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-48)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
-        
-    }
+       }
     
    
 

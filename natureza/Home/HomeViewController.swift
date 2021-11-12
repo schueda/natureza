@@ -36,11 +36,7 @@ class HomeViewController: UIViewController {
     lazy var homeCollectionView: HomeCollectionView = {
         let collectionView = HomeCollectionView()
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-      
-        
-        
-        
-        return collectionView
+      return collectionView
     }()
     
    override func viewDidLoad() {

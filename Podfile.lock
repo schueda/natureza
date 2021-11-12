@@ -1,16 +1,16 @@
 PODS:
-  - CameraManager (5.1.3)
+  - CameraKit-iOS (1.2.1)
 
 DEPENDENCIES:
-  - CameraManager (~> 5.1)
+  - CameraKit-iOS
 
 SPEC REPOS:
   trunk:
-    - CameraManager
+    - CameraKit-iOS
 
 SPEC CHECKSUMS:
-  CameraManager: 73936a52093081ba5e44914e8120ab511360f5d4
+  CameraKit-iOS: 7a8aeb4b6ac93c59088ada934efb6010ed2394c1
 
-PODFILE CHECKSUM: a8cb87655aa4f1b0d280a71017b20218e056c20c
+PODFILE CHECKSUM: 9a85df46bac6d3561825448b5088b919edc942fd
 
 COCOAPODS: 1.11.2
