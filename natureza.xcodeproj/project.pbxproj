@@ -13,6 +13,8 @@
 		6131F54327394A8F00A82704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6131F54227394A8F00A82704 /* Assets.xcassets */; };
 		6131F55427396A8000A82704 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6131F55327396A8000A82704 /* SnapKit */; };
 		63A9AB8B45677113C214B367 /* Pods_natureza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */; };
+		7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510296C273E992D009A29D8 /* CameraViewModel.swift */; };
+		754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754219842743DADE00A40327 /* AfterShotViewController.swift */; };
 		755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CD273A9EC10055563A /* HomeCollectionView.swift */; };
 		755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */; };
 		756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756384DC273BEE47001D1FBC /* CameraViewController.swift */; };
@@ -25,6 +27,8 @@
 		6131F53D27394A8C00A82704 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6131F54227394A8F00A82704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6131F54727394A8F00A82704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7510296C273E992D009A29D8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		754219842743DADE00A40327 /* AfterShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterShotViewController.swift; sourceTree = "<group>"; };
 		755BB4CD273A9EC10055563A /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		756384DC273BEE47001D1FBC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +83,8 @@
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
 				756384DB273BEDAE001D1FBC /* Camera */,
 				755BB4CC273A9E770055563A /* Home */,
-				6131F54227394A8F00A82704 /* Assets.xcassets */,
 				6131F54727394A8F00A82704 /* Info.plist */,
+				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
 			path = natureza;
 			sourceTree = "<group>";
@@ -88,9 +92,9 @@
 		755BB4CC273A9E770055563A /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
+				75F2763D27432A170036F6A6 /* VMs */,
+				75F2763B27432A010036F6A6 /* Views */,
 				755BB4CD273A9EC10055563A /* HomeCollectionView.swift */,
-				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -98,9 +102,43 @@
 		756384DB273BEDAE001D1FBC /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				756384DC273BEE47001D1FBC /* CameraViewController.swift */,
+				75F2763A274329F10036F6A6 /* VMs */,
+				75F27639274329DA0036F6A6 /* Views */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		75F27639274329DA0036F6A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				756384DC273BEE47001D1FBC /* CameraViewController.swift */,
+				754219842743DADE00A40327 /* AfterShotViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75F2763A274329F10036F6A6 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+				7510296C273E992D009A29D8 /* CameraViewModel.swift */,
+			);
+			path = VMs;
+			sourceTree = "<group>";
+		};
+		75F2763B27432A010036F6A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
+				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75F2763D27432A170036F6A6 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VMs;
 			sourceTree = "<group>";
 		};
 		91355BA70827DB49F02A370F /* Pods */ = {
@@ -109,7 +147,6 @@
 				BACB4279A0495528882EDA81 /* Pods-natureza.debug.xcconfig */,
 				F719093FF9D94F525D863EF7 /* Pods-natureza.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -235,9 +272,11 @@
 				755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */,
 				6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */,
 				6131F53A27394A8C00A82704 /* AppDelegate.swift in Sources */,
+				7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */,
 				6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */,
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
+				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
