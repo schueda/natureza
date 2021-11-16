@@ -36,7 +36,17 @@ class CameraViewModel: CameraViewModelDelegate {
         
     func switchCamera(){
         
-        
+        switch cameraManager.cameraDevice {
+            
+        case .back:
+            
+            cameraManager.cameraDevice = .front
+            
+        case .front:
+            
+            cameraManager.cameraDevice = .back
+            
+        }
         
     }
     

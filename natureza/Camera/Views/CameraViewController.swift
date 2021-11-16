@@ -13,9 +13,17 @@ class CameraViewController: UIViewController {
     
     var switchCameraButton : UIButton = {
         let button = UIButton()
-        let image = UIImage(named: "switchcamera")
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "arrow.triangle.2.circlepath.camera")?.withRenderingMode(.alwaysTemplate)
+        button.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
         return button
     }()
     
@@ -36,28 +44,32 @@ class CameraViewController: UIViewController {
         return button
     }()
     
+    
+    @objc func switchCamera(){
+        
+        viewModel.switchCamera()
+        
+    }
+    
+    
     @objc func takePhoto(){
     
         viewModel.takePhoto() {
-            
+        
             self.setupAfterShot()
-            
-        }
+       }
     }
     
    override func viewDidLoad() {
         super.viewDidLoad()
-     
-       
        setupCameraView()
        setupCaptureButton()
-    
+       setupSwitchCameraButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.startCamera()
-       
-    }
+   }
     
     
    func setupAfterShot() {
@@ -66,22 +78,16 @@ class CameraViewController: UIViewController {
         navigationController?.pushViewController(AfterShotViewController(image: image), animated: false)
     }
     
-    
-    
   func setupCameraView(){
-        
         let newView = UIView()
         view.addSubview(newView)
         newView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-      
-        viewModel.cameraManager.addPreviewLayerToView(newView)
+      viewModel.cameraManager.addPreviewLayerToView(newView)
    }
     
-    
-    
-    func setupCaptureButton() {
+   func setupCaptureButton() {
         view.addSubview(captureImageButton)
         captureImageButton.snp.makeConstraints { make in
             make.height.equalTo(80)
@@ -89,6 +95,16 @@ class CameraViewController: UIViewController {
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
+    }
+    
+    func setupSwitchCameraButton() {
+        view.addSubview(switchCameraButton)
+        switchCameraButton.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-64)
+        }
+        
     }
     
     
