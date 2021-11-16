@@ -5,15 +5,15 @@ import CameraManager
 
 
 
+
 class CameraViewController: UIViewController {
     
-    let cameraManager = CameraManager()
-    var imageTaken: UIImage?
+    let viewModel = CameraViewModel()
     var confirmPhotoView: UIImageView?
     
     var switchCameraButton : UIButton = {
         let button = UIButton()
-        let image = UIImage(named: "switchcamera")?.withRenderingMode(.alwaysTemplate)
+        let image = UIImage(named: "switchcamera")
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -38,46 +38,48 @@ class CameraViewController: UIViewController {
     
     @objc func takePhoto(){
     
-        cameraManager.capturePictureWithCompletion { result in
-            switch result {
-            case .success(let content):
-                self.imageTaken = content.asImage
+        viewModel.takePhoto() {
             
-            case .failure:
-                print("couldnt take pic")
-            }
+            self.setupAfterShot()
+            
         }
-  }
+    }
     
-   
-    
-    
-    
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
-        setupCameraView()
-        setupCaptureButton()
-        
-        
-        
-        // Do any additional setup after loading the view.
+     
+       
+       setupCameraView()
+       setupCaptureButton()
+    
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.startCamera()
+       
+    }
+    
+    
+   func setupAfterShot() {
+        guard let image = viewModel.imageTaken else { return }
+        viewModel.stopCamera()
+        navigationController?.pushViewController(AfterShotViewController(image: image), animated: false)
     }
     
     
     
-    func setupCameraView(){
+  func setupCameraView(){
         
         let newView = UIView()
         view.addSubview(newView)
         newView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
-        let camera = cameraManager
-        camera.addPreviewLayerToView(newView)
-        
-        
-    }
+      
+        viewModel.cameraManager.addPreviewLayerToView(newView)
+   }
+    
+    
     
     func setupCaptureButton() {
         view.addSubview(captureImageButton)
