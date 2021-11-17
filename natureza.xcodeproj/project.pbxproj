@@ -18,6 +18,9 @@
 		755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CD273A9EC10055563A /* HomeCollectionView.swift */; };
 		755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */; };
 		756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756384DC273BEE47001D1FBC /* CameraViewController.swift */; };
+		759941ED2744524B00580D14 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EC2744524B00580D14 /* CollectionModel.swift */; };
+		759941EF27445F4E00580D14 /* AfterShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EE27445F4E00580D14 /* AfterShotViewModel.swift */; };
+		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		755BB4CD273A9EC10055563A /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
 		755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		756384DC273BEE47001D1FBC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		759941EC2744524B00580D14 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		759941EE27445F4E00580D14 /* AfterShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterShotViewModel.swift; sourceTree = "<group>"; };
+		759941F12745291C00580D14 /* FIleManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleManagerServices.swift; sourceTree = "<group>"; };
 		90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACB4279A0495528882EDA81 /* Pods-natureza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.debug.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.debug.xcconfig"; sourceTree = "<group>"; };
 		F719093FF9D94F525D863EF7 /* Pods-natureza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.release.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.release.xcconfig"; sourceTree = "<group>"; };
@@ -81,22 +87,12 @@
 			children = (
 				6131F53927394A8C00A82704 /* AppDelegate.swift */,
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
+				759941E6274451D600580D14 /* Gallery */,
 				756384DB273BEDAE001D1FBC /* Camera */,
-				755BB4CC273A9E770055563A /* Home */,
 				6131F54727394A8F00A82704 /* Info.plist */,
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
 			path = natureza;
-			sourceTree = "<group>";
-		};
-		755BB4CC273A9E770055563A /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				75F2763D27432A170036F6A6 /* VMs */,
-				75F2763B27432A010036F6A6 /* Views */,
-				755BB4CD273A9EC10055563A /* HomeCollectionView.swift */,
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		756384DB273BEDAE001D1FBC /* Camera */ = {
@@ -106,6 +102,50 @@
 				75F27639274329DA0036F6A6 /* Views */,
 			);
 			path = Camera;
+			sourceTree = "<group>";
+		};
+		759941E6274451D600580D14 /* Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				759941F0274528E600580D14 /* Services */,
+				759941EB2744520E00580D14 /* Models */,
+				759941EA2744520300580D14 /* Views */,
+				759941E9274451FD00580D14 /* VMs */,
+			);
+			path = Gallery;
+			sourceTree = "<group>";
+		};
+		759941E9274451FD00580D14 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VMs;
+			sourceTree = "<group>";
+		};
+		759941EA2744520300580D14 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
+				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
+				755BB4CD273A9EC10055563A /* HomeCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		759941EB2744520E00580D14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				759941EC2744524B00580D14 /* CollectionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		759941F0274528E600580D14 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				759941F12745291C00580D14 /* FIleManagerServices.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		75F27639274329DA0036F6A6 /* Views */ = {
@@ -121,22 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				7510296C273E992D009A29D8 /* CameraViewModel.swift */,
-			);
-			path = VMs;
-			sourceTree = "<group>";
-		};
-		75F2763B27432A010036F6A6 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
-				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		75F2763D27432A170036F6A6 /* VMs */ = {
-			isa = PBXGroup;
-			children = (
+				759941EE27445F4E00580D14 /* AfterShotViewModel.swift */,
 			);
 			path = VMs;
 			sourceTree = "<group>";
@@ -270,13 +295,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */,
+				759941EF27445F4E00580D14 /* AfterShotViewModel.swift in Sources */,
 				6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */,
+				759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */,
 				6131F53A27394A8C00A82704 /* AppDelegate.swift in Sources */,
 				7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */,
 				6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */,
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
+				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

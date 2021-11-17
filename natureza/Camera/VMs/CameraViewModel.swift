@@ -7,6 +7,7 @@
 
 import Foundation
 import CameraManager
+import Photos
 
 protocol CameraViewModelDelegate: AnyObject {
     
