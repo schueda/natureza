@@ -46,6 +46,22 @@ class AfterShotViewController: UIViewController {
         return button
     }()
     
+    let notesButton: UIButton = {
+        let button = UIButton()
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "note.text.badge.plus")
+        button.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        button.tintColor = .white
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(dismissPhoto), for: .touchUpInside)
+        return button
+    }()
+    
     @objc func dismissPhoto(){
         self.navigationController?.popViewController(animated: false)
     }
@@ -62,6 +78,8 @@ class AfterShotViewController: UIViewController {
         navigationItem.hidesBackButton = true
         setupAfterShot()
         setupDismissButton()
+        setupConfirmButton()
+       setupNotesButton()
         
 
         // Do any additional setup after loading the view.
@@ -80,8 +98,8 @@ class AfterShotViewController: UIViewController {
     func setupDismissButton(){
         view.addSubview(dismissImageButton)
         dismissImageButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-56)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(72)
         
         }
        
@@ -90,11 +108,23 @@ class AfterShotViewController: UIViewController {
         view.addSubview(confirmPhotoButton)
         confirmPhotoButton.snp.makeConstraints { make in
             make.height.equalTo(80)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-36)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(64)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-64)
         }
    }
+    
+    
+    func setupNotesButton(){
+        view.addSubview(notesButton)
+       notesButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-52)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-48)
+        
+        }
+
+        
+    }
     
    func setupAfterShot() {
         

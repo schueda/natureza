@@ -91,7 +91,7 @@ class CameraViewController: UIViewController {
         view.addSubview(captureImageButton)
         captureImageButton.snp.makeConstraints { make in
             make.height.equalTo(80)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-36)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
