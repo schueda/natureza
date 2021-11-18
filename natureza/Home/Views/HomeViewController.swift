@@ -74,3 +74,21 @@ class HomeViewController: UIViewController {
 
 }
 
+#if DEBUG
+import SwiftUI
+struct HomeViewController_Preview: PreviewProvider {
+    static var previews: some View {
+        ContentView().previewDevice("iPhone 12")
+    }
+
+    struct ContentView: UIViewControllerRepresentable {
+
+        func makeUIViewController(context: Context) -> UIViewController {
+            UINavigationController(rootViewController: HomeViewController())
+        }
+
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        }
+    }
+}
+#endif

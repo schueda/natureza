@@ -14,7 +14,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 30
+        imageView.layer.cornerRadius = 10
         
         return imageView
         
@@ -46,3 +46,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     
 }
+
+
+
