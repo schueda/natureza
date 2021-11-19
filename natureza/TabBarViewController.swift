@@ -23,18 +23,19 @@ class TabBarViewController: UITabBarController{
 
         tabBarController?.tabBar.backgroundColor = .green
         
-        let homeVC = HomeViewController()
-        
-        homeVC.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
         
         
-        let photoVC = PhotoVC()
-        photoVC.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
+        let collectionViewController = HomeViewController()
+        collectionViewController.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
+        
+        let createViewController = CreateViewController()
+        
+        createViewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
         
         let profileVC =  ProfileVC()
         profileVC.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person")!, tag: 2)
         
-        self.setViewControllers([ photoVC, homeVC,profileVC], animated: false)
+        self.setViewControllers([ collectionViewController, createViewController, profileVC], animated: false)
     }
     
 }

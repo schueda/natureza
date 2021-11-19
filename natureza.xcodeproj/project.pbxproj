@@ -174,8 +174,8 @@
 		759941EA2744520300580D14 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
 				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
+				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
 				755BB4CD273A9EC10055563A /* HomeCollectionView.swift */,
 			);
 			path = Views;
