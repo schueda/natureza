@@ -9,34 +9,93 @@ import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
     
+    lazy var cellView: UIView = {
+        
+        let view = UIView()
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        
+        return view
+    }()
+    
+    
     lazy var cellImage: UIImageView = {
         
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 30
+        
         
         return imageView
         
     }()
     
+    lazy var cellLabel: UILabel = {
+        let labelPlaceHolder = "Place Holder"
+        let label = UILabel()
+        label.text = labelPlaceHolder
+        label.font = .systemFont(ofSize: 10, weight: .bold)
+        label.textAlignment = .left
+        
+        return label
+    }()
+    
+    
+    lazy var cellRect: UIView = {
+        let rect = UIView()
+        rect.backgroundColor = .systemYellow
+        return rect
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupCellView()
         setupCellImage()
+        setupCellRect()
+        setupCellLabel()
+    }
+    
+    private func setupCellView() {
+        addSubview(cellView)
+        cellView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func setupCellImage() {
-        addSubview(cellImage)
+        
+        cellView.addSubview(cellImage)
         cellImage.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
+    private func setupCellRect() {
+        cellView.addSubview(cellRect)
+        cellRect.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(bounds.height * 0.2)
+            
+        }
+    }
+    
+    private func setupCellLabel() {
+        
+        cellRect.addSubview(cellLabel)
+        cellLabel.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+        }
+    }
+    
+    
     func setupCell(_ image: UIImage) {
         cellImage.image = image
  }
-    
-    
+
     
     
     required init?(coder: NSCoder) {
@@ -46,3 +105,5 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     
 }
+
+
