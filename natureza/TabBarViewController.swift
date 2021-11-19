@@ -15,39 +15,33 @@ class TabBarViewController: UITabBarController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    selectedIndex = 0
+        selectedIndex = 0
         
-        view.backgroundColor = .systemBrown
         UITabBar.appearance().barTintColor = .systemBackground
-       tabBar.tintColor = .label
-
-        tabBarController?.tabBar.backgroundColor = .green
+        tabBar.tintColor = .label
         
-        
-        
-        let collectionViewController = HomeViewController()
-        collectionViewController.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
-        
-        let createViewController = CreateViewController()
-        
-        createViewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
-        
-        let profileVC =  ProfileVC()
-        profileVC.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person")!, tag: 2)
-        
-        self.setViewControllers([ collectionViewController, createViewController, profileVC], animated: false)
+        self.setViewControllers([ getHomeViewController(), getCreateViewController(), getProfileViewController()], animated: false)
     }
     
-}
- 
-
-
-
-//
-class PhotoVC: UIViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
+    private func getHomeViewController() -> UINavigationController {
+        let viewController = HomeViewController()
+        viewController.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
+    }
+    
+    private func getCreateViewController() -> UINavigationController {
+        let viewController = CreateViewController()
+        viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
+    }
+    
+    private func getProfileViewController() -> UINavigationController {
+        let viewController =  ProfileVC()
+        viewController.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person")!, tag: 2)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
     }
 }
     

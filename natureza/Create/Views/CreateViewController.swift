@@ -20,13 +20,22 @@ class CreateViewController: UIViewController {
     
     lazy var addImageButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .green
+        button.backgroundColor = .yellow.withAlphaComponent(0.6)
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor.yellow.cgColor
+        button.layer.borderWidth = 2
+        
+
         return button
     }()
 
     lazy var addCollectionButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .yellow
+        button.backgroundColor = .yellow.withAlphaComponent(0.6)
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor.yellow.cgColor
+        button.layer.borderWidth = 2
+        
         return button
     }()
     
