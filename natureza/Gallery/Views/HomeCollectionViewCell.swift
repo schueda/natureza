@@ -1,10 +1,10 @@
+
 //
 //  HomeCollectionViewCell.swift
 //  natureza
 //
 //  Created by Gabriel Puppi on 09/11/21.
 //
-
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {

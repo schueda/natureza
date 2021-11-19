@@ -4,14 +4,14 @@
 //
 //  Created by André Schueda on 08/11/21.
 //
-
 import UIKit
 import SnapKit
-import AVFoundation
 
 class HomeViewController: UIViewController {
     
-
+    
+    let viewModel = CollectionViewModel()
+    
     lazy var openCameraButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -24,19 +24,17 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    @objc func openCamera(sender: UIButton!) {
-        print("Button tapped")
-        let vc = CameraViewController()
-        vc.modalPresentationStyle = .fullScreen
-        navigationController?.present(vc, animated: true, completion: nil)
-     }
     
-   
+    @objc func openCamera() {
+        
+        navigationController?.pushViewController(CameraViewController(), animated: false)
+        
+    }
     
     lazy var homeCollectionView: HomeCollectionView = {
         let collectionView = HomeCollectionView()
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-      return collectionView
+       return collectionView
     }()
     
    override func viewDidLoad() {
@@ -44,10 +42,11 @@ class HomeViewController: UIViewController {
         
         setupHomeCollectionView()
         setupOpenCameraButton()
+        viewModel.retrieveImages()
    
   }
     
- // Funções para setar as constraints da view
+ // Funções para setar a tela
     
     private func setupOpenCameraButton() {
         view.addSubview(openCameraButton)
@@ -72,22 +71,3 @@ class HomeViewController: UIViewController {
 
 
 }
-
-#if DEBUG
-import SwiftUI
-struct HomeViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView().previewDevice("iPhone 12")
-    }
-
-    struct ContentView: UIViewControllerRepresentable {
-
-        func makeUIViewController(context: Context) -> UIViewController {
-            UINavigationController(rootViewController: HomeViewController())
-        }
-
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
-    }
-}
-#endif

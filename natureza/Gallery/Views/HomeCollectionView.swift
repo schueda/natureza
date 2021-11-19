@@ -4,10 +4,12 @@
 //
 //  Created by Gabriel Puppi on 09/11/21.
 //
-
 import UIKit
+import SnapKit
 
 class HomeCollectionView: UIView {
+    
+   
 
     lazy var homeCollection: UICollectionView = {
         
