@@ -12,17 +12,18 @@
 		6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6131F53D27394A8C00A82704 /* HomeViewController.swift */; };
 		6131F54327394A8F00A82704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6131F54227394A8F00A82704 /* Assets.xcassets */; };
 		6131F55427396A8000A82704 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6131F55327396A8000A82704 /* SnapKit */; };
+		61DE48BE2747E6A700D0FBE5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */; };
 		63A9AB8B45677113C214B367 /* Pods_natureza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */; };
 		7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510296C273E992D009A29D8 /* CameraViewModel.swift */; };
 		754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754219842743DADE00A40327 /* AfterShotViewController.swift */; };
 		755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CD273A9EC10055563A /* HomeCollectionView.swift */; };
 		755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */; };
 		756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756384DC273BEE47001D1FBC /* CameraViewController.swift */; };
-		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 		759941ED2744524B00580D14 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EC2744524B00580D14 /* CollectionModel.swift */; };
 		759941EF27445F4E00580D14 /* AfterShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EE27445F4E00580D14 /* AfterShotViewModel.swift */; };
 		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
 		75E7F8382745440900D5AAB3 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7F8372745440900D5AAB3 /* CollectionViewModel.swift */; };
+		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		6131F53D27394A8C00A82704 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6131F54227394A8F00A82704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6131F54727394A8F00A82704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		7510296C273E992D009A29D8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		754219842743DADE00A40327 /* AfterShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterShotViewController.swift; sourceTree = "<group>"; };
 		755BB4CD273A9EC10055563A /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
@@ -92,12 +94,53 @@
 				6131F53927394A8C00A82704 /* AppDelegate.swift */,
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
 				9A3DB5722745419200D4AD3F /* TabBarViewController.swift */,
-				759941E6274451D600580D14 /* Gallery */,
+				759941E6274451D600580D14 /* Collections */,
+				61DE48B82747E60B00D0FBE5 /* Create */,
 				756384DB273BEDAE001D1FBC /* Camera */,
 				6131F54727394A8F00A82704 /* Info.plist */,
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
 			path = natureza;
+			sourceTree = "<group>";
+		};
+		61DE48B82747E60B00D0FBE5 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				61DE48B92747E63300D0FBE5 /* Services */,
+				61DE48BA2747E63C00D0FBE5 /* Models */,
+				61DE48BB2747E65000D0FBE5 /* Views */,
+				61DE48BC2747E65D00D0FBE5 /* VMs */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		61DE48B92747E63300D0FBE5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		61DE48BA2747E63C00D0FBE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		61DE48BB2747E65000D0FBE5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61DE48BC2747E65D00D0FBE5 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VMs;
 			sourceTree = "<group>";
 		};
 		756384DB273BEDAE001D1FBC /* Camera */ = {
@@ -109,7 +152,7 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
-		759941E6274451D600580D14 /* Gallery */ = {
+		759941E6274451D600580D14 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
 				759941F0274528E600580D14 /* Services */,
@@ -117,7 +160,7 @@
 				759941EA2744520300580D14 /* Views */,
 				759941E9274451FD00580D14 /* VMs */,
 			);
-			path = Gallery;
+			path = Collections;
 			sourceTree = "<group>";
 		};
 		759941E9274451FD00580D14 /* VMs */ = {
@@ -302,6 +345,7 @@
 			files = (
 				75E7F8382745440900D5AAB3 /* CollectionViewModel.swift in Sources */,
 				755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */,
+				61DE48BE2747E6A700D0FBE5 /* CreateViewController.swift in Sources */,
 				759941EF27445F4E00580D14 /* AfterShotViewModel.swift in Sources */,
 				6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */,
 				759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */,
@@ -443,7 +487,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -471,7 +515,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
