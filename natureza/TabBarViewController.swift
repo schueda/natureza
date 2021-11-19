@@ -17,7 +17,7 @@ class TabBarViewController: UITabBarController{
         super.viewDidLoad()
     selectedIndex = 0
         
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemBrown
         UITabBar.appearance().barTintColor = .systemBackground
        tabBar.tintColor = .label
 
@@ -41,13 +41,7 @@ class TabBarViewController: UITabBarController{
  
 
 
-class HomeVC: UIViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemRed
-        
-    }
-}
+
 //
 class PhotoVC: UIViewController{
     override func viewDidLoad() {

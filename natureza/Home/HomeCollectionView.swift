@@ -12,12 +12,16 @@ class HomeCollectionView: UIView {
     lazy var homeCollection: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = .init(top: 16, left: 0, bottom: 16, right: 0)
+        layout.minimumLineSpacing = 24
+        
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.delegate = self
         collection.dataSource = self
         collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         collection.backgroundColor = .clear
+        collection.showsVerticalScrollIndicator = false
         return collection
     }()
     
@@ -63,7 +67,7 @@ extension HomeCollectionView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let width = (homeCollection.bounds.width/2) - 8
+        let width = (homeCollection.bounds.width/2) - 12
         let height = width
         return CGSize(width: width, height: height)
     }
