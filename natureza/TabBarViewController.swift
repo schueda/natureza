@@ -25,7 +25,7 @@ class TabBarViewController: UITabBarController{
         
         let homeVC = HomeViewController()
         
-        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
+        homeVC.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
         
         
         let photoVC = PhotoVC()

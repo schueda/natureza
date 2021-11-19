@@ -62,8 +62,8 @@ class HomeViewController: UIViewController {
     private func setupHomeCollectionView() {
         view.addSubview(homeCollectionView)
         homeCollectionView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(26)
-            make.trailing.equalToSuperview().offset(-26)
+            make.leading.equalToSuperview().offset(24)
+            make.trailing.equalToSuperview().offset(-24)
             make.top.equalToSuperview()
             make.bottom.equalToSuperview()
         }
