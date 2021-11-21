@@ -43,7 +43,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
     
     lazy var cellRect: UIView = {
         let rect = UIView()
-        rect.backgroundColor = .systemYellow
+        rect.backgroundColor = .tintColor
         return rect
     }()
     
