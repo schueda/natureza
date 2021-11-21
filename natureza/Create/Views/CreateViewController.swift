@@ -25,7 +25,12 @@ class CreateViewController: UIViewController {
         button.layer.borderColor = UIColor.yellow.cgColor
         button.layer.borderWidth = 2
         
-
+        let view = ButtonView(text: "Adicionar imagem")
+        button.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
         return button
     }()
 
@@ -35,6 +40,12 @@ class CreateViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.layer.borderColor = UIColor.yellow.cgColor
         button.layer.borderWidth = 2
+        
+        let view = ButtonView(text: "Adicionar coleção")
+        button.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         return button
     }()
