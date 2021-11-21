@@ -14,6 +14,7 @@
 		6131F55427396A8000A82704 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6131F55327396A8000A82704 /* SnapKit */; };
 		61DE48BE2747E6A700D0FBE5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */; };
 		61DE48C02748124F00D0FBE5 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48BF2748124F00D0FBE5 /* ButtonView.swift */; };
+		61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48C2274A942D00D0FBE5 /* UIColor+.swift */; };
 		63A9AB8B45677113C214B367 /* Pods_natureza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */; };
 		7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510296C273E992D009A29D8 /* CameraViewModel.swift */; };
 		754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754219842743DADE00A40327 /* AfterShotViewController.swift */; };
@@ -36,6 +37,7 @@
 		6131F54727394A8F00A82704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		61DE48BF2748124F00D0FBE5 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		61DE48C2274A942D00D0FBE5 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		7510296C273E992D009A29D8 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
 		754219842743DADE00A40327 /* AfterShotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterShotViewController.swift; sourceTree = "<group>"; };
 		755BB4CD273A9EC10055563A /* HomeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				759941E6274451D600580D14 /* Collections */,
 				61DE48B82747E60B00D0FBE5 /* Create */,
 				756384DB273BEDAE001D1FBC /* Camera */,
+				61DE48C1274A940B00D0FBE5 /* Extensions */,
 				6131F54727394A8F00A82704 /* Info.plist */,
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
@@ -144,6 +147,14 @@
 			children = (
 			);
 			path = VMs;
+			sourceTree = "<group>";
+		};
+		61DE48C1274A940B00D0FBE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				61DE48C2274A942D00D0FBE5 /* UIColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		756384DB273BEDAE001D1FBC /* Camera */ = {
@@ -361,6 +372,7 @@
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
+				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
