@@ -45,6 +45,7 @@ class CreateViewController: UIViewController {
         button.layer.cornerRadius = 10
         button.layer.borderColor = UIColor.tintColor.cgColor
         button.layer.borderWidth = 2
+        button.addTarget(self, action: #selector(addCollectionTapped), for: .touchUpInside)
         
         let view = CreateButtonView(text: "Adicionar coleção")
         button.addSubview(view)
@@ -54,6 +55,10 @@ class CreateViewController: UIViewController {
         
         return button
     }()
+    
+    @objc private func addCollectionTapped() {
+        navigationController?.pushViewController(CollectionViewController(), animated: false)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -38,6 +38,11 @@ class CreateButtonView: UIView {
         self.text = text
         super.init(frame: frame)
         
+        backgroundColor = .tintColor.withAlphaComponent(0.6)
+        layer.cornerRadius = 10
+        layer.borderColor = UIColor.tintColor.cgColor
+        layer.borderWidth = 2
+        
         isUserInteractionEnabled = false
         
         setupStack()
