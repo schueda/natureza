@@ -11,7 +11,6 @@
 		6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6131F53B27394A8C00A82704 /* SceneDelegate.swift */; };
 		6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6131F53D27394A8C00A82704 /* HomeViewController.swift */; };
 		6131F54327394A8F00A82704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6131F54227394A8F00A82704 /* Assets.xcassets */; };
-		6131F55427396A8000A82704 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6131F55327396A8000A82704 /* SnapKit */; };
 		61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48C2274A942D00D0FBE5 /* UIColor+.swift */; };
 		63A9AB8B45677113C214B367 /* Pods_natureza.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */; };
 		7510296D273E992D009A29D8 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510296C273E992D009A29D8 /* CameraViewModel.swift */; };
@@ -54,7 +53,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6131F55427396A8000A82704 /* SnapKit in Frameworks */,
 				63A9AB8B45677113C214B367 /* Pods_natureza.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +209,6 @@
 			);
 			name = natureza;
 			packageProductDependencies = (
-				6131F55327396A8000A82704 /* SnapKit */,
 			);
 			productName = natureza;
 			productReference = 6131F53627394A8C00A82704 /* natureza.app */;
@@ -242,7 +239,6 @@
 			);
 			mainGroup = 6131F52D27394A8C00A82704;
 			packageReferences = (
-				6131F55227396A8000A82704 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 6131F53727394A8C00A82704 /* Products */;
 			projectDirPath = "";
@@ -455,7 +451,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46LT924HJ5;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,7 +479,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46LT924HJ5;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -525,25 +521,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		6131F55227396A8000A82704 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		6131F55327396A8000A82704 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 6131F55227396A8000A82704 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6131F52E27394A8C00A82704 /* Project object */;
 }
