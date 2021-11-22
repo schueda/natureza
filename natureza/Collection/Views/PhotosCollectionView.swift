@@ -8,6 +8,7 @@
 import UIKit
 
 class PhotosCollectionView: UIView {
+    let count = 4
     
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -18,12 +19,13 @@ class PhotosCollectionView: UIView {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collection.delegate = self
         collection.dataSource = self
-        collection.register(HomeCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collection.register(AddImageCollectionViewCell.self, forCellWithReuseIdentifier: "imageButton")
         collection.backgroundColor = .clear
         collection.showsHorizontalScrollIndicator = false
         return collection
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -47,13 +49,18 @@ extension PhotosCollectionView: UICollectionViewDelegate {
 extension PhotosCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //Quantidade de imagens do data source + 1
-        return 3
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! HomeCollectionViewCell
-        cell.setupCell(UIImage(named: "testImage")!)
-        return cell
+        if indexPath.row == count - 1 {
+            let cell = collection.dequeueReusableCell(withReuseIdentifier: "imageButton", for: indexPath) as! AddImageCollectionViewCell
+            return cell
+        } else {
+            let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCollectionViewCell
+            cell.setupCell(image: UIImage(named: "testImage")!)
+            return cell
+        }
     }
 }
 

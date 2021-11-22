@@ -11,9 +11,10 @@ class CollectionViewController: UIViewController {
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .appGray1
+        textField.backgroundColor = .appBackground3
         textField.layer.cornerRadius = 10
-        textField.placeholder = "Nome da coleção"
+        textField.textColor = .appLabelLight
+        textField.attributedPlaceholder = NSAttributedString(string: "Nome da coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.appGray3])
         
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.leftViewMode = .always
@@ -32,6 +33,8 @@ class CollectionViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .tintColor
         button.layer.cornerRadius = 10
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
+        button.setTitleColor(.appGray5, for: .normal)
         button.setTitle("Gerar vídeo", for: .normal)
         
         return button
@@ -39,16 +42,24 @@ class CollectionViewController: UIViewController {
     
     lazy var notificationView: NotificationView = {
         let view = NotificationView()
-        view.backgroundColor = .appGray3
+        view.backgroundColor = .appBackground3
         view.layer.cornerRadius = 10
         return view
     }()
     
     lazy var noteTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .appGray1
+        textView.backgroundColor = .appBackground3
         textView.layer.cornerRadius = 10
         textView.isEditable = true
+        textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        textView.showsVerticalScrollIndicator = false
+        textView.delegate = self
+        textView.font = .systemFont(ofSize: 13, weight: .regular)
+        
+        textView.text = "Escreva uma nota sobre a coleção"
+        textView.textColor = .appGray3
+        
         
         return textView
     }()
@@ -57,6 +68,7 @@ class CollectionViewController: UIViewController {
         super.viewDidLoad()
         title = "Nova coleção"
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.tintColor]
+        view.backgroundColor = .appBackground2
         
         setupTitleTextField()
         setupPhotosCollection()
@@ -114,4 +126,21 @@ class CollectionViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
         }
     }
+}
+
+extension CollectionViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.appGray3 {
+            textView.text = nil
+            textView.textColor = UIColor.appLabelLight
+        }
+    }
+
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Escreva uma nota sobre a coleção"
+            textView.textColor = UIColor.appGray3
+        }
+    }
+    
 }
