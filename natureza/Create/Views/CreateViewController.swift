@@ -36,7 +36,7 @@ class CreateViewController: UIViewController {
     }()
     
     @objc private func addImageTapped() {
-        navigationController?.pushViewController(CameraViewController(), animated: true)
+        navigationController?.pushViewController(CameraViewController(), animated: false)
     }
 
     lazy var addCollectionButton: UIButton = {
