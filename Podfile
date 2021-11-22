@@ -9,6 +9,8 @@ pod 'CameraManager', '~> 5.1'
 
 pod 'SnapKit', '~> 5.0.0'
 
+pod 'IQKeyboardManagerSwift', '~> 6.3.0'
+
 end
 
 
