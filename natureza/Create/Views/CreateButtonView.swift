@@ -1,5 +1,5 @@
 //
-//  ButtonView.swift
+//  CreateButtonView.swift
 //  natureza
 //
 //  Created by André Schueda on 19/11/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonView: UIView {
+class CreateButtonView: UIView {
     let text: String
     
     lazy var stack: UIStackView = {

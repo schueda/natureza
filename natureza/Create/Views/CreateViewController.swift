@@ -26,7 +26,7 @@ class CreateViewController: UIViewController {
         button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(addImageTapped), for: .touchUpInside)
         
-        let view = ButtonView(text: "Adicionar imagem")
+        let view = CreateButtonView(text: "Adicionar imagem")
         button.addSubview(view)
         view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -46,7 +46,7 @@ class CreateViewController: UIViewController {
         button.layer.borderColor = UIColor.tintColor.cgColor
         button.layer.borderWidth = 2
         
-        let view = ButtonView(text: "Adicionar coleção")
+        let view = CreateButtonView(text: "Adicionar coleção")
         button.addSubview(view)
         view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
