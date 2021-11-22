@@ -25,7 +25,6 @@ class CollectionViewController: UIViewController {
     
     lazy var photosCollection: PhotosCollectionView = {
         let collection = PhotosCollectionView()
-        collection.backgroundColor = .red
         return collection
     }()
     
