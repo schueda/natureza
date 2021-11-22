@@ -18,8 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        window?.rootViewController = UINavigationController(rootViewController: CollectionViewController())
- 
+        window?.rootViewController = TabBarViewController()
+        
         let tintColor = getColorBySeason()
         window?.tintColor = tintColor
     }

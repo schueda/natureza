@@ -82,7 +82,7 @@ class CollectionViewController: UIViewController {
         titleTextField.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(32)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
             make.height.equalTo(50)
         }
     }
@@ -123,7 +123,7 @@ class CollectionViewController: UIViewController {
             make.top.equalTo(notificationView.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
         }
     }
 }
