@@ -12,6 +12,8 @@
 		6131F53E27394A8C00A82704 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6131F53D27394A8C00A82704 /* HomeViewController.swift */; };
 		6131F54327394A8F00A82704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6131F54227394A8F00A82704 /* Assets.xcassets */; };
 		61C2BF91274BCE7E00A5F72F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */; };
+		61C2BF93274BDB0100A5F72F /* PhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2BF92274BDB0100A5F72F /* PhotosCollectionView.swift */; };
+		61C2BF95274BDFEC00A5F72F /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2BF94274BDFEC00A5F72F /* NotificationView.swift */; };
 		61DE48BE2747E6A700D0FBE5 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */; };
 		61DE48C02748124F00D0FBE5 /* CreateButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48BF2748124F00D0FBE5 /* CreateButtonView.swift */; };
 		61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DE48C2274A942D00D0FBE5 /* UIColor+.swift */; };
@@ -36,6 +38,8 @@
 		6131F54227394A8F00A82704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6131F54727394A8F00A82704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		61C2BF92274BDB0100A5F72F /* PhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionView.swift; sourceTree = "<group>"; };
+		61C2BF94274BDFEC00A5F72F /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		61DE48BD2747E6A700D0FBE5 /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		61DE48BF2748124F00D0FBE5 /* CreateButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateButtonView.swift; sourceTree = "<group>"; };
 		61DE48C2274A942D00D0FBE5 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */,
+				61C2BF92274BDB0100A5F72F /* PhotosCollectionView.swift */,
+				61C2BF94274BDFEC00A5F72F /* NotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,9 +415,11 @@
 				9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */,
 				6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */,
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
+				61C2BF93274BDB0100A5F72F /* PhotosCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
+				61C2BF95274BDFEC00A5F72F /* NotificationView.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
