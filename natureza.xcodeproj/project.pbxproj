@@ -24,6 +24,7 @@
 		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
 		75E7F8382745440900D5AAB3 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7F8372745440900D5AAB3 /* CollectionViewModel.swift */; };
 		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
+		9A5396902748322100150F60 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53968F2748322100150F60 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		75E7F8372745440900D5AAB3 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DB5722745419200D4AD3F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9A53968F2748322100150F60 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		BACB4279A0495528882EDA81 /* Pods-natureza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.debug.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.debug.xcconfig"; sourceTree = "<group>"; };
 		F719093FF9D94F525D863EF7 /* Pods-natureza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.release.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +96,7 @@
 				6131F53927394A8C00A82704 /* AppDelegate.swift */,
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
 				9A3DB5722745419200D4AD3F /* TabBarViewController.swift */,
+				9A53968F2748322100150F60 /* OnboardingViewController.swift */,
 				759941E6274451D600580D14 /* Gallery */,
 				756384DB273BEDAE001D1FBC /* Camera */,
 				61DE48C1274A940B00D0FBE5 /* Extensions */,
@@ -322,6 +325,7 @@
 				6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */,
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
+				9A5396902748322100150F60 /* OnboardingViewController.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
