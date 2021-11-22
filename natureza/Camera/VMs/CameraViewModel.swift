@@ -52,6 +52,22 @@ class CameraViewModel: CameraViewModelDelegate {
     }
     
     
+    func setOverlay() -> UIImage {
+        
+        var image: UIImage
+        
+        if imageTaken != nil {
+            
+          image = imageTaken!
+            
+        } else {
+            
+            image = UIImage(named: "standartOverlay")!
+            }
+        return image
+    }
+    
+    
     func takePhoto(completion: @escaping () -> Void){
         
         cameraManager.capturePictureWithCompletion { result in
