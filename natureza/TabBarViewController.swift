@@ -18,7 +18,7 @@ class TabBarViewController: UITabBarController{
         selectedIndex = 0
         
         UITabBar.appearance().barTintColor = .systemBackground
-        tabBar.tintColor = .label
+        tabBar.tintColor = .tintColor
         
         self.setViewControllers([ getHomeViewController(), getCreateViewController(), getProfileViewController()], animated: false)
     }

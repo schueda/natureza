@@ -13,7 +13,7 @@ class ButtonView: UIView {
     lazy var stack: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
-        stack.spacing = 16
+        stack.spacing = 8
         return stack
     }()
     
@@ -22,6 +22,7 @@ class ButtonView: UIView {
         label.text = text
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textAlignment = .center
+        label.numberOfLines = 0
         return label
     }()
     
@@ -50,13 +51,10 @@ class ButtonView: UIView {
     private func setupStack() {
         addSubview(stack)
         stack.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
             make.center.equalToSuperview()
         }
-    }
-    
-    private func setupLabel() {
     }
     
     private func setupPlusImage() {
