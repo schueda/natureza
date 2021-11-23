@@ -10,7 +10,7 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     
-    let viewModel = CollectionViewModel()
+//    let viewModel = CollectionViewModel()
     
     lazy var homeCollectionView: HomeCollectionView = {
         let collectionView = HomeCollectionView()
@@ -25,7 +25,7 @@ class HomeViewController: UIViewController {
        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.tintColor]
         
         setupHomeCollectionView()
-        viewModel.retrieveImages()
+//        viewModel.retrieveImages()
    
   }
     

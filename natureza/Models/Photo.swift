@@ -8,19 +8,23 @@
 import Foundation
 import UIKit
 
-class Photo {
-    let date = Date()
-    var idFromDate: String {
+class Photo: Codable {
+    var date = Date()
+    var idFromDate: String? {
         "\(date.timeIntervalSince1970)"
     }
     
-    let note: String?
-    let image: UIImage
+    var note: String?
+    var image: UIImage?
     
-    init(note: String? = nil, image: UIImage) {
+    init(note: String? = nil, image: UIImage?) {
         self.note = note
         self.image = image
     }
     
+    enum CodingKeys: CodingKey {
+        case date
+        case note
+    }
     
 }

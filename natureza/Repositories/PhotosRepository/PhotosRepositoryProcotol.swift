@@ -8,5 +8,6 @@
 import Foundation
 
 protocol PhotosRepository {
-    SavePhoto
+    func SavePhoto(_ photo: Photo)
+    func getPhotoById(_ id: String) -> Photo?
 }

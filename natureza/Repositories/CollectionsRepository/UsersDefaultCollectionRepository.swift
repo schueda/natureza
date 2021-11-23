@@ -29,6 +29,5 @@ class UsersDefaultCollectionRepository: CollectionsRepository {
     }
     
     func getAllCollections() {
-        <#code#>
     }
 }

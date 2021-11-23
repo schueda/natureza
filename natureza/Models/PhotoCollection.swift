@@ -7,15 +7,15 @@
 
 import Foundation
 
-class PhotoCollection {
+class PhotoCollection: Codable {
     var id: UUID
     var name: String
     
-    var photos: []
+    var photos: [String]
     var notification: Notification
     var note: String?
     
-    init(id: UUID = UUID(), name: String, photos: [Photo], notification: Notification, note: String? = nil) {
+    init(id: UUID = UUID(), name: String, photos: [String], notification: Notification, note: String? = nil) {
         self.id = id
         self.name = name
         self.photos = photos
