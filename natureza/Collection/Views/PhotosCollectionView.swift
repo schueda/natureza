@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotosCollectionView: UIView {
-    let count = 4
+    let count = 1
     
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
