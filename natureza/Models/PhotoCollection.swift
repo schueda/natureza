@@ -12,7 +12,7 @@ class PhotoCollection: Codable {
     var name: String
     
     var photos: [String]
-    var notification: Notification
+    var notification: Notification?
     var note: String?
     
     init(id: UUID = UUID(), name: String, photos: [String], notification: Notification, note: String? = nil) {
@@ -21,6 +21,13 @@ class PhotoCollection: Codable {
         self.photos = photos
         self.notification = notification
         self.note = note
+    }
+    
+    enum CodingKeys: CodingKey {
+        case id
+        case name
+        case photos
+        case note
     }
     
 }
