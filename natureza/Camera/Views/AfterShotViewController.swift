@@ -15,14 +15,10 @@ class AfterShotViewController: UIViewController {
     
     let dismissImageButton: UIButton = {
         let button = UIButton()
-        let imageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "arrow.uturn.backward")
-        button.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        button.setImage(UIImage(systemName: "arrow.uturn.backward"), for: .normal)
+        button.setTitle("Descartar", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.alignTextBelow()
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(dismissPhoto), for: .touchUpInside)
@@ -48,17 +44,13 @@ class AfterShotViewController: UIViewController {
     
     let notesButton: UIButton = {
         let button = UIButton()
-        let imageView = UIImageView()
-        imageView.isUserInteractionEnabled = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(systemName: "note.text.badge.plus")
-        button.addSubview(imageView)
-        imageView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+        button.setImage(UIImage(systemName: "note.text.badge.plus"), for: .normal)
+        button.setTitle("Anotar", for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 12)
+        button.alignTextBelow()
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(dismissPhoto), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addNoteToPhoto), for: .touchUpInside)
         return button
     }()
     
@@ -66,12 +58,25 @@ class AfterShotViewController: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
-    
     @objc func confirmPhoto(){
         
 //        viewModel.savePhoto(image: image)
         
     }
+    
+    @objc func addNoteToPhoto(){
+        
+        let notesVC = NotesViewController()
+        let nav = UINavigationController(rootViewController: notesVC)
+        nav.modalPresentationStyle = .pageSheet
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(nav, animated: true, completion: nil)
+        
+ }
+        
+    
     
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +84,7 @@ class AfterShotViewController: UIViewController {
         setupAfterShot()
         setupDismissButton()
         setupConfirmButton()
-       setupNotesButton()
+        setupNotesButton()
         
 
         // Do any additional setup after loading the view.
@@ -98,19 +103,22 @@ class AfterShotViewController: UIViewController {
     func setupDismissButton(){
         view.addSubview(dismissImageButton)
         dismissImageButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-56)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(72)
+            make.height.equalTo(80)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(96)
         
         }
        
     }
+
+    
    func setupConfirmButton() {
         view.addSubview(confirmPhotoButton)
         confirmPhotoButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(64)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-64)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(72)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-72)
         }
    }
     
@@ -118,8 +126,9 @@ class AfterShotViewController: UIViewController {
     func setupNotesButton(){
         view.addSubview(notesButton)
        notesButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-52)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-48)
+           make.height.equalTo(80)
+           make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
+           make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         
         }
 
