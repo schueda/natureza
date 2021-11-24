@@ -20,10 +20,6 @@ class CreateViewController: UIViewController {
     
     lazy var addImageButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .tintColor.withAlphaComponent(0.6)
-        button.layer.cornerRadius = 10
-        button.layer.borderColor = UIColor.tintColor.cgColor
-        button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(addImageTapped), for: .touchUpInside)
         
         let view = CreateButtonView(text: "Adicionar imagem")
@@ -41,10 +37,6 @@ class CreateViewController: UIViewController {
 
     lazy var addCollectionButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .tintColor.withAlphaComponent(0.6)
-        button.layer.cornerRadius = 10
-        button.layer.borderColor = UIColor.tintColor.cgColor
-        button.layer.borderWidth = 2
         button.addTarget(self, action: #selector(addCollectionTapped), for: .touchUpInside)
         
         let view = CreateButtonView(text: "Adicionar coleção")
@@ -63,7 +55,8 @@ class CreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Criar"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.tintColor]
+        view.backgroundColor = .appBackground2
+
         
         setupButtonsStack()
         

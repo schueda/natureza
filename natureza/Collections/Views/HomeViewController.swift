@@ -9,27 +9,27 @@ import SnapKit
 
 class HomeViewController: UIViewController {
     
-    
-//    let viewModel = CollectionViewModel()
-    
     lazy var homeCollectionView: HomeCollectionView = {
-        let collectionView = HomeCollectionView()
+        let collectionView = HomeCollectionView(navigationController: navigationController)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-       return collectionView
+        return collectionView
     }()
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-       
-       title = "Coleções"
-       navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.tintColor]
+        
+        title = "Coleções"
+        view.backgroundColor = .appBackground2
         
         setupHomeCollectionView()
-//        viewModel.retrieveImages()
-   
-  }
+        
+    }
     
- // Funções para setar a tela
+    override func viewWillAppear(_ animated: Bool) {
+        homeCollectionView.reloadCollection()
+    }
+    
+    // Funções para setar a tela
     private func setupHomeCollectionView() {
         view.addSubview(homeCollectionView)
         homeCollectionView.snp.makeConstraints { make in
@@ -40,6 +40,6 @@ class HomeViewController: UIViewController {
         }
         
     }
-
-
+    
+    
 }
