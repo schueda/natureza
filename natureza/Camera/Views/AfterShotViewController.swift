@@ -11,7 +11,6 @@ import SnapKit
 class AfterShotViewController: UIViewController {
     
     var image: UIImage
-//    let viewModel = AfterShotViewModel()
     
     let dismissImageButton: UIButton = {
         let button = UIButton()
