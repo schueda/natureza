@@ -5,7 +5,7 @@ PODS:
 
 DEPENDENCIES:
   - CameraManager (~> 5.1)
-  - IQKeyboardManagerSwift
+  - IQKeyboardManagerSwift (~> 6.5.0)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 99ed5e9c4902c95b99ee3f37b0a7cee22c723025
+PODFILE CHECKSUM: 801d4c16ff6c015b2ae30383650db71e4af7972b
 
 COCOAPODS: 1.11.2

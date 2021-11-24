@@ -11,7 +11,7 @@ import SnapKit
 class AfterShotViewController: UIViewController {
     
     var image: UIImage
-    let viewModel = AfterShotViewModel()
+//    let viewModel = AfterShotViewModel()
     
     let dismissImageButton: UIButton = {
         let button = UIButton()
@@ -60,7 +60,7 @@ class AfterShotViewController: UIViewController {
     
     @objc func confirmPhoto(){
         
-        viewModel.savePhoto(image: image)
+//        viewModel.savePhoto(image: image)
         
     }
     
