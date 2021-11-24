@@ -12,16 +12,16 @@ class CameraViewController: UIViewController {
     var confirmPhotoView: UIImageView?
     var overlayView = UIImageView()
     
-    lazy var configCameraButton : UIButton = {
+    lazy var configFlashButton : UIButton = {
         let button = UIButton()
         let imageView = UIImageView()
-        button.setImage(UIImage(systemName: "gearshape.2.fill"), for: .normal)
-        button.setTitle("Ajustes", for: .normal)
+        button.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
+        button.setTitle("Off", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
         button.alignTextBelow()
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
+        button.addTarget(self, action: #selector(toggleFlash), for: .touchUpInside)
         return button
     }()
     
@@ -57,9 +57,27 @@ class CameraViewController: UIViewController {
      var isOverlayed = false
     
     
-    @objc func switchCamera() {
+    @objc func toggleFlash() {
         
-        viewModel.switchCamera()
+        switch viewModel.cameraManager.flashMode {
+            
+        case .auto:
+            viewModel.cameraManager.flashMode = .on
+            configFlashButton.setImage(UIImage(systemName:"bolt.fill"), for: .normal)
+            configFlashButton.setTitle("On", for: .normal)
+        
+        case .on:
+            viewModel.cameraManager.flashMode = .off
+            configFlashButton.setImage(UIImage(systemName:"bolt.slash.fill"), for: .normal)
+            configFlashButton.setTitle("Off", for: .normal)
+        
+        case.off:
+            viewModel.cameraManager.flashMode = .auto
+            configFlashButton.setImage(UIImage(systemName:"bolt.badge.a"), for: .normal)
+            configFlashButton.setTitle("Auto", for: .normal)
+            
+            
+        }
         
     }
     
@@ -139,8 +157,8 @@ class CameraViewController: UIViewController {
     }
     
     func setupConfigCameraButton() {
-        view.addSubview(configCameraButton)
-        configCameraButton.snp.makeConstraints { make in
+        view.addSubview(configFlashButton)
+        configFlashButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
