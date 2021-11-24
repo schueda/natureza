@@ -8,11 +8,13 @@
 import UIKit
 
 class CollectionViewController: UIViewController {
+    var collection: PhotoCollection?
+    let viewModel = CollectionViewModel()
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .appBackground3
-        textField.layer.cornerRadius = 10
+        textField.layer.cornerRadius = 3
         textField.textColor = .appLabelLight
         textField.attributedPlaceholder = NSAttributedString(string: "Nome da coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.appGray3])
         
@@ -20,6 +22,7 @@ class CollectionViewController: UIViewController {
         textField.leftViewMode = .always
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.rightViewMode = .always
+        textField.text = collection?.name
         
         return textField
     }()
@@ -50,7 +53,7 @@ class CollectionViewController: UIViewController {
     lazy var noteTextView: UITextView = {
         let textView = UITextView()
         textView.backgroundColor = .appBackground3
-        textView.layer.cornerRadius = 10
+        textView.layer.cornerRadius = 3
         textView.isEditable = true
         textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         textView.showsVerticalScrollIndicator = false
@@ -64,17 +67,42 @@ class CollectionViewController: UIViewController {
         return textView
     }()
 
+    init(collection: PhotoCollection? = nil) {
+        self.collection = collection
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Nova coleção"
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.tintColor]
+        title = collection?.name ?? "Nova coleção"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(clickedSave))
         view.backgroundColor = .appBackground2
+        
+        if collection != nil {
+            photosCollection.photos = viewModel.getPhotos(from: collection!)
+        }
         
         setupTitleTextField()
         setupPhotosCollection()
         setupVideoButton()
         setupNotificationView()
         setupNoteTextView()
+    }
+    
+    @objc private func clickedSave() {
+        if collection == nil {
+            collection = PhotoCollection(name: titleTextField.text ?? "", photos: [], notification: Notification(), note: noteTextView.text ?? "")
+        } else {
+            collection?.name = titleTextField.text ?? ""
+            collection?.note = noteTextView.text ?? ""
+        }
+        
+        viewModel.save(collection: collection!)
+        
     }
     
     private func setupTitleTextField() {

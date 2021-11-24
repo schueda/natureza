@@ -8,7 +8,7 @@
 import UIKit
 
 class PhotosCollectionView: UIView {
-    let count = 1
+    var photos: [Photo] = []
     
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -48,12 +48,11 @@ extension PhotosCollectionView: UICollectionViewDelegate {
 
 extension PhotosCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //Quantidade de imagens do data source + 1
-        return count
+        return photos.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.row == count - 1 {
+        if indexPath.row == photos.count {
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "imageButton", for: indexPath) as! AddImageCollectionViewCell
             return cell
         } else {

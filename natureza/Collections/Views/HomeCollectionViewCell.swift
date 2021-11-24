@@ -24,7 +24,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        
+        imageView.backgroundColor = .appGray3
         
         return imageView
         
@@ -35,6 +35,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = labelPlaceHolder
         label.font = .systemFont(ofSize: 10, weight: .bold)
+        label.textColor = .appBackground2
         label.textAlignment = .left
         
         return label
@@ -92,10 +93,11 @@ class HomeCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func setupCell(_ image: UIImage) {
+    func setupCell(image: UIImage?, title: String) {
         cellImage.image = image
- }
-
+        cellLabel.text = title
+    }
+    
     
     
     required init?(coder: NSCoder) {

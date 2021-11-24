@@ -23,6 +23,7 @@ class CreateButtonView: UIView {
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.textColor = .appBackground2
         return label
     }()
     
@@ -31,6 +32,7 @@ class CreateButtonView: UIView {
         imageView.image = UIImage(systemName: "plus")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
+        imageView.tintColor = .appBackground2
         return imageView
     }()
     
