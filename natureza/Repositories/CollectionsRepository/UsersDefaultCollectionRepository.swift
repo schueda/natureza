@@ -17,7 +17,6 @@ class UsersDefaultCollectionRepository: CollectionsRepository {
     func saveCollection(_ photoCollection: PhotoCollection) {
         saveKey(from: photoCollection)
         saveCodable(from: photoCollection)
-        
     }
     
     private func saveKey(from collection: PhotoCollection) {
@@ -38,15 +37,34 @@ class UsersDefaultCollectionRepository: CollectionsRepository {
         return []
     }
     
-    private func saveCodable(from photo: PhotoCollection) {
+    private func saveCodable(from collection: PhotoCollection) {
         do {
-            let photoData = try JSONEncoder().encode(photo)
-            UserDefaults.standard.setValue(photoData, forKey: photo.id.uuidString)
+            let collectionData = try JSONEncoder().encode(collection)
+            UserDefaults.standard.setValue(collectionData, forKey: collection.id.uuidString)
         } catch let err {
-            print("failed saving art: \(err)")
+            print("failed saving collection: \(err)")
         }
     }
     
-    func getAllCollections() {
+    func getAllCollections() -> [PhotoCollection] {
+        var collections: [PhotoCollection] = []
+        let keys = getKeys()
+        for key in keys {
+            guard let collection = getCollection(forKey: key) else { continue }
+            collections.append(collection)
+        }
+        return collections
+    }
+    
+    private func getCollection(forKey key: String) -> PhotoCollection? {
+        do {
+            guard let collectionData = UserDefaults.standard.data(forKey: key) else { return nil }
+            let collection = try JSONDecoder().decode(PhotoCollection.self, from: collectionData)
+            return collection
+            
+        } catch let err {
+            print("Error getting collection: \(err)")
+            return nil
+        }
     }
 }

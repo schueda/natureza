@@ -9,6 +9,6 @@ import Foundation
 
 protocol CollectionsRepository {
     func saveCollection(_ photoCollection: PhotoCollection)
-    func getAllCollections()
+    func getAllCollections() -> [PhotoCollection]
     
 }
