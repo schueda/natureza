@@ -28,6 +28,13 @@ class AfterShotViewModel {
         
     }
     
+    func addNoteToPhoto() {
+        
+        
+        
+        
+    }
+    
     
     func savePhoto(image: UIImage){
         

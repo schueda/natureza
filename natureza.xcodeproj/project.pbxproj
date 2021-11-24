@@ -21,6 +21,7 @@
 		759941ED2744524B00580D14 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EC2744524B00580D14 /* CollectionModel.swift */; };
 		759941EF27445F4E00580D14 /* AfterShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941EE27445F4E00580D14 /* AfterShotViewModel.swift */; };
 		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
+		75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D99913274E80BE00917CD9 /* NotesViewController.swift */; };
 		75E7F8382745440900D5AAB3 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E7F8372745440900D5AAB3 /* CollectionViewModel.swift */; };
 		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -41,6 +42,7 @@
 		759941EC2744524B00580D14 /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		759941EE27445F4E00580D14 /* AfterShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterShotViewModel.swift; sourceTree = "<group>"; };
 		759941F12745291C00580D14 /* FIleManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleManagerServices.swift; sourceTree = "<group>"; };
+		75D99913274E80BE00917CD9 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		75E7F8372745440900D5AAB3 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DB5722745419200D4AD3F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				756384DC273BEE47001D1FBC /* CameraViewController.swift */,
 				754219842743DADE00A40327 /* AfterShotViewController.swift */,
+				75D99913274E80BE00917CD9 /* NotesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				6131F53C27394A8C00A82704 /* SceneDelegate.swift in Sources */,
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
+				75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,

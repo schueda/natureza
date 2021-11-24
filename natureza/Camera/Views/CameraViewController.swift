@@ -75,9 +75,7 @@ class CameraViewController: UIViewController {
             viewModel.cameraManager.flashMode = .auto
             configFlashButton.setImage(UIImage(systemName:"bolt.badge.a"), for: .normal)
             configFlashButton.setTitle("Auto", for: .normal)
-            
-            
-        }
+       }
         
     }
     

@@ -50,7 +50,7 @@ class AfterShotViewController: UIViewController {
         button.alignTextBelow()
         button.tintColor = .white
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(dismissPhoto), for: .touchUpInside)
+        button.addTarget(self, action: #selector(addNoteToPhoto), for: .touchUpInside)
         return button
     }()
     
@@ -58,12 +58,25 @@ class AfterShotViewController: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
-    
     @objc func confirmPhoto(){
         
         viewModel.savePhoto(image: image)
         
     }
+    
+    @objc func addNoteToPhoto(){
+        
+        let notesVC = NotesViewController()
+        let nav = UINavigationController(rootViewController: notesVC)
+        nav.modalPresentationStyle = .pageSheet
+        if let sheet = nav.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        present(nav, animated: true, completion: nil)
+        
+ }
+        
+    
     
   override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +84,7 @@ class AfterShotViewController: UIViewController {
         setupAfterShot()
         setupDismissButton()
         setupConfirmButton()
-       setupNotesButton()
+        setupNotesButton()
         
 
         // Do any additional setup after loading the view.
@@ -97,10 +110,12 @@ class AfterShotViewController: UIViewController {
         }
        
     }
+
+    
    func setupConfirmButton() {
         view.addSubview(confirmPhotoButton)
         confirmPhotoButton.snp.makeConstraints { make in
-          make.height.equalTo(80)
+            make.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(72)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-72)
