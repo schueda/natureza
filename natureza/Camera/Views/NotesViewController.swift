@@ -32,8 +32,18 @@ class NotesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Anotações"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Concluir", style: .done, target: self, action: #selector(rightBarButtonClicked))
+
+        
         setupNotesView()
         setupNotesTextView()
+        
+    }
+    
+    @objc func rightBarButtonClicked() {
+        
+        self.navigationController?.dismiss(animated: true, completion: nil)
         
     }
 
