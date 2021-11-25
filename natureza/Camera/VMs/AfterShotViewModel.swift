@@ -13,7 +13,7 @@ import UIKit
 
 class AfterShotViewModel {
     let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
-    let collectionsRepository: CollectionsRepository = UsersDefaultCollectionRepository.shared
+    let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
 
     func savePhoto(_ photo: Photo){
         photosRepository.SavePhoto(photo)

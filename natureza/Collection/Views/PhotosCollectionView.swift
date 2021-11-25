@@ -31,6 +31,10 @@ class PhotosCollectionView: UIView {
         return collection
     }()
     
+    func reloadCollection() {
+        collection.reloadData()
+    }
+    
     init(frame: CGRect = .zero, collection: PhotoCollection?, navigationController: UINavigationController?) {
         photoCollection = collection
         self.navigationController = navigationController

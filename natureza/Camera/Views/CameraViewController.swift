@@ -147,10 +147,10 @@ class CameraViewController: UIViewController {
     
     func setOverlayView() {
         
-        overlayView.image = viewModel.setOverlay()
+        overlayView.image = viewModel.setOverlay(with: collection)
         overlayView.contentMode = .scaleAspectFill
         overlayView.translatesAutoresizingMaskIntoConstraints = false
-        overlayView.layer.opacity = 0.0
+        overlayView.alpha = 0.0
         view.addSubview(overlayView)
         overlayView.snp.makeConstraints { make in
             make.edges.equalToSuperview()

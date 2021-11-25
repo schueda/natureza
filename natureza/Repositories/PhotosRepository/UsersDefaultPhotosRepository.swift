@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class UserDefaultsPhotoRepository: PhotosRepository {
+    
     static let shared = UserDefaultsPhotoRepository()
     
     private init() {}
@@ -108,4 +109,9 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         return UIImage(data: imageData)
     }
 
+    func getLastPhoto() -> Photo? {
+        let keys = getKeys()
+        guard let lastImage = keys.last else { return nil }
+        return getPhotoById(lastImage)
+    }
 }

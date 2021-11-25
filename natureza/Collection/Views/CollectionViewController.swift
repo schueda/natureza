@@ -98,6 +98,10 @@ class CollectionViewController: UIViewController {
         setupNoteTextView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        photosCollection.reloadCollection()
+    }
+    
     @objc private func clickedSave() {
         var note: String?
         if noteTextView.text == "Escreva uma nota sobre a coleção" {

@@ -1,5 +1,5 @@
 //
-//  UsersDefaultCollectionRepository.swift
+//  UserDefaultsCollectionRepository.swift
 //  natureza
 //
 //  Created by André Schueda on 23/11/21.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-class UsersDefaultCollectionRepository: CollectionsRepository {
-    static let shared = UsersDefaultCollectionRepository()
+class UserDefaultsCollectionRepository: CollectionsRepository {
+    static let shared = UserDefaultsCollectionRepository()
     
     private init() {}
     
