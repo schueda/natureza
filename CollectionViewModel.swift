@@ -16,12 +16,7 @@ class CollectionViewModel {
     }
     
     func getPhotos(from collection: PhotoCollection) -> [Photo] {
-        var photos: [Photo] = []
-        for id in collection.photos {
-            guard let photo = photosRepository.getPhotoById(id) else { continue }
-            photos.append(photo)
-        }
-        return photos
+        photosRepository.getPhotos(from: collection)
     }
     
 }
