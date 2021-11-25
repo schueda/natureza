@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tintColor = getColorBySeason()
         window?.tintColor = tintColor
+        window?.overrideUserInterfaceStyle = .dark
     }
     
     private func getColorBySeason() -> UIColor {

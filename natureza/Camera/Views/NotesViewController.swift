@@ -12,7 +12,7 @@ class NotesViewController: UIViewController {
     
     lazy var notesSheet: UIView = {
         let textFieldView = UIView()
-        textFieldView.backgroundColor = .appBackground3
+        textFieldView.backgroundColor = .appBackground1
         textFieldView.layer.cornerRadius = 20
         textFieldView.translatesAutoresizingMaskIntoConstraints = false
         return textFieldView
@@ -40,7 +40,7 @@ class NotesViewController: UIViewController {
     func setupNotesView(){
         view.addSubview(notesSheet)
         notesSheet.snp.makeConstraints { make in
-            make.height.equalTo(300)
+            make.height.equalToSuperview()
             make.bottom.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
@@ -50,7 +50,7 @@ class NotesViewController: UIViewController {
     func setupNotesTextView() {
         notesSheet.addSubview(noteTextView)
         noteTextView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(16)
+            make.top.equalToSuperview().offset(72)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-32)
