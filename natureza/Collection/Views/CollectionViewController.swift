@@ -28,7 +28,7 @@ class CollectionViewController: UIViewController {
     }()
     
     lazy var photosCollection: PhotosCollectionView = {
-        let collection = PhotosCollectionView(collection: collection, navigationController: navigationController)
+        let collection = PhotosCollectionView(collection: collection, navigationController: navigationController, viewModel: viewModel)
         return collection
     }()
     

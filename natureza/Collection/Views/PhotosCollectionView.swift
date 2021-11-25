@@ -12,6 +12,7 @@ class PhotosCollectionView: UIView {
     var navigationController: UINavigationController?
     
     let viewController = CollectionViewController()
+    let viewModel: CollectionViewModel
     
     var photos: [Photo] = []
     
@@ -32,12 +33,16 @@ class PhotosCollectionView: UIView {
     }()
     
     func reloadCollection() {
+        guard let photoCollection = photoCollection else { return }
+        photos = viewModel.getPhotos(from: photoCollection)
+    
         collection.reloadData()
     }
     
-    init(frame: CGRect = .zero, collection: PhotoCollection?, navigationController: UINavigationController?) {
+    init(frame: CGRect = .zero, collection: PhotoCollection?, navigationController: UINavigationController?, viewModel: CollectionViewModel) {
         photoCollection = collection
         self.navigationController = navigationController
+        self.viewModel = viewModel
         super.init(frame: frame)
         
         setupCollection()
