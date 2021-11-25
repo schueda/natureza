@@ -82,11 +82,6 @@ class CameraViewModel: CameraViewModelDelegate {
             completion()
         }
         
-        
-        
-        
-        
-        
     }
 }
 

@@ -17,9 +17,6 @@ class UsersDefaultCollectionRepository: CollectionsRepository {
     func saveCollection(_ photoCollection: PhotoCollection) {
         saveKey(from: photoCollection)
         saveCodable(from: photoCollection)
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            print("\(key) = \(value) \n")
-        }
     }
     
     private func saveKey(from collection: PhotoCollection) {

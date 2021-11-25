@@ -7,6 +7,7 @@ import CameraManager
 
 
 class CameraViewController: UIViewController {
+    let collection: PhotoCollection?
     
     let viewModel = CameraViewModel()
     var confirmPhotoView: UIImageView?
@@ -101,6 +102,14 @@ class CameraViewController: UIViewController {
         }
     }
     
+    init(collection: PhotoCollection? = nil) {
+        self.collection = collection
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,7 +132,7 @@ class CameraViewController: UIViewController {
     func setupAfterShot() {
         guard let image = viewModel.imageTaken else { return }
         viewModel.stopCamera()
-        navigationController?.pushViewController(AfterShotViewController(image: image), animated: false)
+        navigationController?.pushViewController(AfterShotViewController(image: image, collection: collection), animated: false)
     }
     
     func setupCameraView(){

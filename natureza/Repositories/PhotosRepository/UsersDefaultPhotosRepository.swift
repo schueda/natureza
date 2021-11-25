@@ -19,6 +19,9 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         saveKey(from: photo)
         saveCodable(from: photo)
         saveImage(from: photo)
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            print("\(key) = \(value) \n")
+        }
     }
     
     private func saveKey(from photo: Photo) {
@@ -77,7 +80,6 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         return imageURL.appendingPathComponent("\(key)-image")
     }
 
-    
     
     func getPhotoById(_ id: String) -> Photo? {
         guard let photo = getEncodablePhoto(forKey: id) else { return nil }

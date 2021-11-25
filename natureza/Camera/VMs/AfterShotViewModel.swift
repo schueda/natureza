@@ -12,32 +12,16 @@ import UIKit
 
 
 class AfterShotViewModel {
+    let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
+    let collectionsRepository: CollectionsRepository = UsersDefaultCollectionRepository.shared
 
-
-
-    func createNewAlbumWithPhoto(asset: Data) {
-
+    func savePhoto(_ photo: Photo){
+        photosRepository.SavePhoto(photo)
     }
-
-    func addPhotoToAlbum(album: String){
-
+    
+    func savePhotoToCollection(photo: Photo, collection: PhotoCollection) {
+        guard let photoId = photo.idFromDate else { return }
+        collection.photos.append(photoId)
+        collectionsRepository.saveCollection(collection)
     }
-
-
-    func savePhoto(image: UIImage){
-
-    }
-
-
-
-    func getAlbum() {
-
-
-
-
-    }
-
-
-
-
 }
