@@ -8,8 +8,12 @@
 import UIKit
 
 class AddImageCollectionViewCell: UICollectionViewCell {
+    var collection: PhotoCollection?
+    var navigationController: UINavigationController?
+    
     lazy var button: UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(clickedButton), for: .touchUpInside)
         
         let view = CreateButtonView(text: "Adicionar imagem")
         button.addSubview(view)
@@ -17,6 +21,10 @@ class AddImageCollectionViewCell: UICollectionViewCell {
         
         return button
     }()
+    
+    @objc private func clickedButton() {
+        navigationController?.pushViewController(CameraViewController(collection: collection), animated: false)
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

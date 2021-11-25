@@ -8,6 +8,12 @@
 import UIKit
 
 class PhotosCollectionView: UIView {
+    var photoCollection: PhotoCollection?
+    var navigationController: UINavigationController?
+    
+    let viewController = CollectionViewController()
+    let viewModel: CollectionViewModel
+    
     var photos: [Photo] = []
     
     lazy var collection: UICollectionView = {
@@ -26,7 +32,17 @@ class PhotosCollectionView: UIView {
         return collection
     }()
     
-    override init(frame: CGRect) {
+    func reloadCollection() {
+        guard let photoCollection = photoCollection else { return }
+        photos = viewModel.getPhotos(from: photoCollection)
+    
+        collection.reloadData()
+    }
+    
+    init(frame: CGRect = .zero, collection: PhotoCollection?, navigationController: UINavigationController?, viewModel: CollectionViewModel) {
+        photoCollection = collection
+        self.navigationController = navigationController
+        self.viewModel = viewModel
         super.init(frame: frame)
         
         setupCollection()
@@ -54,10 +70,13 @@ extension PhotosCollectionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.row == photos.count {
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "imageButton", for: indexPath) as! AddImageCollectionViewCell
+            cell.collection = photoCollection
+            cell.navigationController = navigationController
             return cell
         } else {
             let cell = collection.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PhotoCollectionViewCell
-            cell.setupCell(image: UIImage(named: "testImage")!)
+            
+            cell.setupCell(image: photos[indexPath.row].image)
             return cell
         }
     }

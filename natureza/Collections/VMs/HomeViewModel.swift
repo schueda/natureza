@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class HomeViewModel {
-    let collectionsRepository: CollectionsRepository = UsersDefaultCollectionRepository.shared
+    let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
     let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
     
     func getAllCollections() -> [PhotoCollection] {

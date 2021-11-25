@@ -7,6 +7,7 @@ import CameraManager
 
 
 class CameraViewController: UIViewController {
+    let collection: PhotoCollection?
     
     let viewModel = CameraViewModel()
     var confirmPhotoView: UIImageView?
@@ -37,7 +38,7 @@ class CameraViewController: UIViewController {
         return button
     }()
     
-   lazy var captureImageButton : UIButton = {
+    lazy var captureImageButton : UIButton = {
         let button = UIButton()
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = false
@@ -54,7 +55,7 @@ class CameraViewController: UIViewController {
         return button
     }()
     
-     var isOverlayed = false
+    var isOverlayed = false
     
     
     @objc func toggleFlash() {
@@ -65,27 +66,27 @@ class CameraViewController: UIViewController {
             viewModel.cameraManager.flashMode = .on
             configFlashButton.setImage(UIImage(systemName:"bolt.fill"), for: .normal)
             configFlashButton.setTitle("On", for: .normal)
-        
+            
         case .on:
             viewModel.cameraManager.flashMode = .off
             configFlashButton.setImage(UIImage(systemName:"bolt.slash.fill"), for: .normal)
             configFlashButton.setTitle("Off", for: .normal)
-        
+            
         case.off:
             viewModel.cameraManager.flashMode = .auto
             configFlashButton.setImage(UIImage(systemName:"bolt.badge.a"), for: .normal)
             configFlashButton.setTitle("Auto", for: .normal)
-       }
+        }
         
     }
     
     
     @objc func takePhoto() {
-    
-        viewModel.takePhoto() {
         
+        viewModel.takePhoto() {
+            
             self.setupAfterShot()
-       }
+        }
     }
     
     @objc func showOverlay() {
@@ -93,58 +94,70 @@ class CameraViewController: UIViewController {
         if isOverlayed == false {
             overlayView.layer.opacity = 0.3
             isOverlayed = true
-    } else {
-        
-        overlayView.layer.opacity = 0.0
-        isOverlayed = false
-        
+        } else {
+            
+            overlayView.layer.opacity = 0.0
+            isOverlayed = false
+            
+        }
     }
-}
     
+    init(collection: PhotoCollection? = nil) {
+        self.collection = collection
+        super.init(nibName: nil, bundle: nil)
+    }
     
-  override func viewDidLoad() {
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
-       setupCameraView()
-       setupCaptureButton()
-       setupConfigCameraButton()
-       setupSetOverlayButton()
-       setOverlayView()
+        setupCameraView()
+        setupCaptureButton()
+        setupConfigCameraButton()
+        setupSetOverlayButton()
+        setOverlayView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.startCamera()
-   }
-    
-    
-   func setupAfterShot() {
-        guard let image = viewModel.imageTaken else { return }
-        viewModel.stopCamera()
-        navigationController?.pushViewController(AfterShotViewController(image: image), animated: false)
     }
     
-  func setupCameraView(){
+    override func viewDidDisappear(_ animated: Bool) {
+        viewModel.stopCamera()
+    }
+    
+    
+    func setupAfterShot() {
+        guard let image = viewModel.imageTaken else { return }
+        viewModel.stopCamera()
+        navigationController?.pushViewController(AfterShotViewController(image: image, collection: collection), animated: false)
+    }
+    
+    func setupCameraView(){
         let newView = UIView()
         view.addSubview(newView)
         newView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-     viewModel.cameraManager.addPreviewLayerToView(newView)
-      
-   }
+        viewModel.cameraManager.addPreviewLayerToView(newView)
+        
+    }
     
     func setOverlayView() {
         
-        overlayView.image = viewModel.setOverlay()
+        overlayView.image = viewModel.setOverlay(with: collection)
         overlayView.contentMode = .scaleAspectFill
         overlayView.translatesAutoresizingMaskIntoConstraints = false
-        overlayView.layer.opacity = 0.0
+        overlayView.alpha = 0.0
         view.addSubview(overlayView)
         overlayView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
     
-   func setupCaptureButton() {
+    func setupCaptureButton() {
         view.addSubview(captureImageButton)
         captureImageButton.snp.makeConstraints { make in
             make.height.equalTo(80)
@@ -178,16 +191,16 @@ class CameraViewController: UIViewController {
     
 }
 public extension UIButton {
-
-  func alignTextBelow(spacing: CGFloat = 6.0)
-  {
-      if let image = self.imageView?.image
-      {
-          let imageSize: CGSize = image.size
-          self.titleEdgeInsets = UIEdgeInsets(top: spacing, left: -imageSize.width, bottom: -(imageSize.height), right: 0.0)
-          let labelString = NSString(string: self.titleLabel!.text!)
-          let titleSize = labelString.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel!.font])
-          self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0.0, bottom: 0.0, right: -titleSize.width)
-      }
-  }
+    
+    func alignTextBelow(spacing: CGFloat = 6.0)
+    {
+        if let image = self.imageView?.image
+        {
+            let imageSize: CGSize = image.size
+            self.titleEdgeInsets = UIEdgeInsets(top: spacing, left: -imageSize.width, bottom: -(imageSize.height), right: 0.0)
+            let labelString = NSString(string: self.titleLabel!.text!)
+            let titleSize = labelString.size(withAttributes: [NSAttributedString.Key.font: self.titleLabel!.font])
+            self.imageEdgeInsets = UIEdgeInsets(top: -(titleSize.height + spacing), left: 0.0, bottom: 0.0, right: -titleSize.width)
+        }
+    }
 }

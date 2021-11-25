@@ -9,9 +9,11 @@ import UIKit
 import SnapKit
 
 class AfterShotViewController: UIViewController {
+    let collection: PhotoCollection?
+    let viewModel = AfterShotViewModel()
+    let notesVC = NotesViewController()
     
     var image: UIImage
-//    let viewModel = AfterShotViewModel()
     
     let dismissImageButton: UIButton = {
         let button = UIButton()
@@ -60,13 +62,14 @@ class AfterShotViewController: UIViewController {
     
     @objc func confirmPhoto(){
         
-//        viewModel.savePhoto(image: image)
-        
+        let photo = Photo(note: notesVC.noteTextView.text ?? "", image: image)
+        viewModel.savePhoto(photo)
+        if let collection = collection {
+            viewModel.savePhotoToCollection(photo: photo, collection: collection)
+        }
     }
     
     @objc func addNoteToPhoto(){
-        
-        let notesVC = NotesViewController()
         let nav = UINavigationController(rootViewController: notesVC)
         nav.modalPresentationStyle = .pageSheet
         if let sheet = nav.sheetPresentationController {
@@ -90,7 +93,8 @@ class AfterShotViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    init(image: UIImage) {
+    init(image: UIImage, collection: PhotoCollection?) {
+        self.collection = collection
         self.image = image
         super.init(nibName: nil, bundle: nil)
     } 

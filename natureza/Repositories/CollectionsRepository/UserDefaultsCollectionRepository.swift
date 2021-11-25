@@ -1,5 +1,5 @@
 //
-//  UsersDefaultCollectionRepository.swift
+//  UserDefaultsCollectionRepository.swift
 //  natureza
 //
 //  Created by André Schueda on 23/11/21.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-class UsersDefaultCollectionRepository: CollectionsRepository {
-    static let shared = UsersDefaultCollectionRepository()
+class UserDefaultsCollectionRepository: CollectionsRepository {
+    static let shared = UserDefaultsCollectionRepository()
     
     private init() {}
     
@@ -17,9 +17,6 @@ class UsersDefaultCollectionRepository: CollectionsRepository {
     func saveCollection(_ photoCollection: PhotoCollection) {
         saveKey(from: photoCollection)
         saveCodable(from: photoCollection)
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            print("\(key) = \(value) \n")
-        }
     }
     
     private func saveKey(from collection: PhotoCollection) {

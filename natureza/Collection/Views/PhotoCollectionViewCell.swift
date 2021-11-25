@@ -27,7 +27,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         imageView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
-    func setupCell(image: UIImage) {
+    func setupCell(image: UIImage?) {
         imageView.image = image
     }
     

@@ -28,7 +28,7 @@ class CollectionViewController: UIViewController {
     }()
     
     lazy var photosCollection: PhotosCollectionView = {
-        let collection = PhotosCollectionView()
+        let collection = PhotosCollectionView(collection: collection, navigationController: navigationController, viewModel: viewModel)
         return collection
     }()
     
@@ -60,8 +60,13 @@ class CollectionViewController: UIViewController {
         textView.delegate = self
         textView.font = .systemFont(ofSize: 13, weight: .regular)
         
-        textView.text = "Escreva uma nota sobre a coleção"
-        textView.textColor = .appGray3
+        textView.text = collection?.note ?? "Escreva uma nota sobre a coleção"
+        
+        if collection == nil {
+            textView.textColor = .appGray3
+        } else {
+            textView.textColor = .appLabelLight
+        }
         
         
         return textView
@@ -93,16 +98,25 @@ class CollectionViewController: UIViewController {
         setupNoteTextView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        photosCollection.reloadCollection()
+    }
+    
     @objc private func clickedSave() {
+        var note: String?
+        if noteTextView.text == "Escreva uma nota sobre a coleção" {
+            note = nil
+        } else {
+            note = noteTextView.text
+        }
         if collection == nil {
-            collection = PhotoCollection(name: titleTextField.text ?? "", photos: [], notification: Notification(), note: noteTextView.text ?? "")
+            collection = PhotoCollection(name: titleTextField.text ?? "", photos: [], notification: Notification(), note: noteTextView.text)
         } else {
             collection?.name = titleTextField.text ?? ""
-            collection?.note = noteTextView.text ?? ""
+            collection?.note = note
         }
         
         viewModel.save(collection: collection!)
-        
     }
     
     private func setupTitleTextField() {

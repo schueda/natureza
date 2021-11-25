@@ -16,6 +16,8 @@ protocol CameraViewModelDelegate: AnyObject {
 }
 
 class CameraViewModel: CameraViewModelDelegate {
+    let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
+    let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
     
     let cameraManager = CameraManager()
     var imageTaken: UIImage?
@@ -26,7 +28,7 @@ class CameraViewModel: CameraViewModelDelegate {
         cameraManager.resumeCaptureSession()
         cameraManager.captureSession?.automaticallyConfiguresCaptureDeviceForWideColor = true
         cameraManager.writeFilesToPhoneLibrary = false
-   }
+    }
     
     func stopCamera() {
         
@@ -34,7 +36,7 @@ class CameraViewModel: CameraViewModelDelegate {
         
     }
     
-        
+    
     func switchCamera(){
         
         switch cameraManager.cameraDevice {
@@ -52,19 +54,11 @@ class CameraViewModel: CameraViewModelDelegate {
     }
     
     
-    func setOverlay() -> UIImage {
-        
-        var image: UIImage
-        
-        if imageTaken != nil {
-            
-          image = imageTaken!
-            
-        } else {
-            
-            image = UIImage(named: "standartOverlay")!
-            }
-        return image
+    func setOverlay(with collection: PhotoCollection?) -> UIImage? {
+        if let id = collection?.photos.last {
+            return photosRepository.getPhotoById(id)?.image
+        }
+        return photosRepository.getLastPhoto()?.image
     }
     
     
@@ -72,7 +66,7 @@ class CameraViewModel: CameraViewModelDelegate {
         
         cameraManager.capturePictureWithCompletion { result in
             switch result {
-            
+                
             case .success(let content):
                 self.imageTaken = content.asImage
                 
@@ -81,11 +75,6 @@ class CameraViewModel: CameraViewModelDelegate {
             }
             completion()
         }
-        
-        
-        
-        
-        
         
     }
 }

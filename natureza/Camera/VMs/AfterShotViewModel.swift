@@ -1,52 +1,27 @@
-////
-////  AfterShotViewModel.swift
-////  natureza
-////
-////  Created by Gabriel Puppi on 16/11/21.
-////
 //
-//import Foundation
-//import UIKit
+//  AfterShotViewModel.swift
+//  natureza
 //
+//  Created by Gabriel Puppi on 16/11/21.
 //
-//
-//
-//class AfterShotViewModel {
-//
-//
-//    let fileManager = FileIOController()
-//
-//    func createNewAlbumWithPhoto(asset: Data) {
-//
-//        var collectionAsset = Collection(images: [])
-//        collectionAsset.images.append(asset)
-//        try? fileManager.write(collectionAsset, toDocumentNamed: "Natureza")
-//
-//    }
-//
-//    func addPhotoToAlbum(album: String){
-//
-//    }
-//
-//
-//    func savePhoto(image: UIImage){
-//
-//
-//        let data = image.pngData()
-//
-//        createNewAlbumWithPhoto(asset: data!)
-//    }
-//
-//
-//
-//    func getAlbum() {
-//
-//
-//
-//
-//    }
-//
-//
-//
-//
-//}
+
+import Foundation
+import UIKit
+
+
+
+
+class AfterShotViewModel {
+    let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
+    let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
+
+    func savePhoto(_ photo: Photo){
+        photosRepository.SavePhoto(photo)
+    }
+    
+    func savePhotoToCollection(photo: Photo, collection: PhotoCollection) {
+        guard let photoId = photo.idFromDate else { return }
+        collection.photos.append(photoId)
+        collectionsRepository.saveCollection(collection)
+    }
+}

@@ -8,7 +8,7 @@
 import Foundation
 
 class CollectionViewModel {
-    let collectionsRepository: CollectionsRepository = UsersDefaultCollectionRepository.shared
+    let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
     let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
     
     func save(collection: PhotoCollection) {
@@ -23,4 +23,5 @@ class CollectionViewModel {
         }
         return photos
     }
+    
 }

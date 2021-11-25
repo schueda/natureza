@@ -11,11 +11,11 @@ class PhotoCollection: Codable {
     var id: UUID
     var name: String
     
-    var photos: [String]
+    var photos: [String] = []
     var notification: Notification?
-    var note: String
+    var note: String?
     
-    init(id: UUID = UUID(), name: String, photos: [String], notification: Notification, note: String) {
+    init(id: UUID = UUID(), name: String, photos: [String], notification: Notification, note: String?) {
         self.id = id
         self.name = name
         self.photos = photos

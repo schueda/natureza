@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class UserDefaultsPhotoRepository: PhotosRepository {
+    
     static let shared = UserDefaultsPhotoRepository()
     
     private init() {}
@@ -19,6 +20,9 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         saveKey(from: photo)
         saveCodable(from: photo)
         saveImage(from: photo)
+        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+            print("\(key) = \(value) \n")
+        }
     }
     
     private func saveKey(from photo: Photo) {
@@ -78,7 +82,6 @@ class UserDefaultsPhotoRepository: PhotosRepository {
     }
 
     
-    
     func getPhotoById(_ id: String) -> Photo? {
         guard let photo = getEncodablePhoto(forKey: id) else { return nil }
         photo.image = getPhotoImage(forKey: id)
@@ -106,4 +109,9 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         return UIImage(data: imageData)
     }
 
+    func getLastPhoto() -> Photo? {
+        let keys = getKeys()
+        guard let lastImage = keys.last else { return nil }
+        return getPhotoById(lastImage)
+    }
 }
