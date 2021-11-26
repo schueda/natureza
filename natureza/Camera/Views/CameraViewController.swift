@@ -78,6 +78,8 @@ class CameraViewController: UIViewController {
     @objc func dismissCamera() {
         
         navigationController?.popViewController(animated: true)
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     
@@ -146,6 +148,8 @@ class CameraViewController: UIViewController {
         setOverlayView()
     }
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         viewModel.startCamera()
     }
@@ -198,7 +202,7 @@ class CameraViewController: UIViewController {
         configFlashButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-48)
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
         
     }
