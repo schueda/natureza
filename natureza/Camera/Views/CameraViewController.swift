@@ -15,7 +15,6 @@ class CameraViewController: UIViewController {
     
     lazy var configFlashButton : UIButton = {
         let button = UIButton()
-        let imageView = UIImageView()
         button.setImage(UIImage(systemName: "bolt.slash.fill"), for: .normal)
         button.setTitle("Off", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 12)
@@ -38,6 +37,25 @@ class CameraViewController: UIViewController {
         return button
     }()
     
+    lazy var exitCameraButton: UIButton = {
+        let button = UIButton()
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "xmark")?.withRenderingMode(.alwaysTemplate)
+        button.addSubview(imageView)
+        button.tintColor = .white
+        imageView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            
+        }
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(dismissCamera), for: .touchUpInside)
+        
+        
+        return button
+    }()
+    
     lazy var captureImageButton : UIButton = {
         let button = UIButton()
         let imageView = UIImageView()
@@ -57,6 +75,13 @@ class CameraViewController: UIViewController {
     
     var isOverlayed = false
     
+    @objc func dismissCamera() {
+        
+        navigationController?.popViewController(animated: true)
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        
+    }
     
     @objc func toggleFlash() {
         
@@ -113,12 +138,17 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
         setupCameraView()
+        setupDismissButton()
         setupCaptureButton()
-        setupConfigCameraButton()
+        setupFlashButton()
         setupSetOverlayButton()
         setOverlayView()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.startCamera()
@@ -167,12 +197,12 @@ class CameraViewController: UIViewController {
         }
     }
     
-    func setupConfigCameraButton() {
+    func setupFlashButton() {
         view.addSubview(configFlashButton)
         configFlashButton.snp.makeConstraints { make in
             make.height.equalTo(80)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
         
     }
@@ -184,6 +214,17 @@ class CameraViewController: UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
             make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(96)
         }
+        
+    }
+    func setupDismissButton(){
+        view.addSubview(exitCameraButton)
+        exitCameraButton.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.top.equalTo(48)
+            make.leading.equalTo(32)
+        }
+        
+        
         
     }
     
