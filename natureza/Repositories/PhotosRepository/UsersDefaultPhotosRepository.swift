@@ -25,6 +25,13 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         }
     }
     
+    func SavePhotos(of collection: PhotoCollection) {
+        guard let photos = collection.photosBuffer else { return }
+        for photo in photos {
+            SavePhoto(photo)
+        }
+    }
+    
     private func saveKey(from photo: Photo) {
         
         var keys = getKeys()

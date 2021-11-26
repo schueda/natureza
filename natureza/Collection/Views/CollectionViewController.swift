@@ -10,6 +10,8 @@ import UIKit
 class CollectionViewController: UIViewController {
     var collection: PhotoCollection?
     let viewModel = CollectionViewModel()
+    var savedPhotos: [Photo] = []
+    var photos: [Photo] = []
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
@@ -23,12 +25,27 @@ class CollectionViewController: UIViewController {
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.rightViewMode = .always
         textField.text = collection?.name
+        textField.addTarget(self, action: #selector(changedTextField), for: .editingChanged)
         
         return textField
     }()
     
+    @objc func changedTextField() {
+       enableOrDisableSaveButton()
+    }
+    
+    private func enableOrDisableSaveButton() {
+        guard let text = titleTextField.text else { return }
+        if text != "" {
+            navigationItem.rightBarButtonItem?.isEnabled = true
+            
+        } else {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    
     lazy var photosCollection: PhotosCollectionView = {
-        let collection = PhotosCollectionView(collection: collection, navigationController: navigationController, viewModel: viewModel)
+        let collection = PhotosCollectionView(collection: collection, navigationController: navigationController, viewModel: viewModel, photos: photos)
         return collection
     }()
     
@@ -72,7 +89,7 @@ class CollectionViewController: UIViewController {
         return textView
     }()
 
-    init(collection: PhotoCollection? = nil) {
+    init(collection: PhotoCollection? = PhotoCollection(name: "", photos: [], notification: Notification(), note: "")) {
         self.collection = collection
         super.init(nibName: nil, bundle: nil)
     }
@@ -83,12 +100,13 @@ class CollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = collection?.name ?? "Nova coleção"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(clickedSave))
-        view.backgroundColor = .appBackground2
         
-        if collection != nil {
-            photosCollection.photos = viewModel.getPhotos(from: collection!)
+        setupView()
+        
+        if let collection = collection {
+            guard let photosBuffer = collection.photosBuffer else { return }
+            savedPhotos = viewModel.getPhotos(from: collection)
+            photos = savedPhotos + photosBuffer
         }
         
         setupTitleTextField()
@@ -99,7 +117,18 @@ class CollectionViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if let photoBuffer = collection?.photosBuffer {
+            photos = savedPhotos + photoBuffer
+        }
+        photosCollection.photos = photos
         photosCollection.reloadCollection()
+    }
+    
+    private func setupView() {
+        title = collection?.name ?? "Nova coleção"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(clickedSave))
+        enableOrDisableSaveButton()
+        view.backgroundColor = .appBackground2
     }
     
     @objc private func clickedSave() {
@@ -109,14 +138,14 @@ class CollectionViewController: UIViewController {
         } else {
             note = noteTextView.text
         }
-        if collection == nil {
-            collection = PhotoCollection(name: titleTextField.text ?? "", photos: [], notification: Notification(), note: noteTextView.text)
-        } else {
-            collection?.name = titleTextField.text ?? ""
-            collection?.note = note
-        }
         
-        viewModel.save(collection: collection!)
+        collection?.name = titleTextField.text ?? ""
+        collection?.note = note
+        
+        guard let collection = collection else { return }
+
+        viewModel.save(collection: collection)
+        navigationController?.popViewController(animated: true)
     }
     
     private func setupTitleTextField() {

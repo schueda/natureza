@@ -12,6 +12,14 @@ class CollectionViewModel {
     let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
     
     func save(collection: PhotoCollection) {
+        photosRepository.SavePhotos(of: collection)
+        
+        guard let photos = collection.photosBuffer else { return }
+        for photo in photos {
+            guard let photoId = photo.idFromDate else { return }
+            collection.photosIds.append(photoId)
+        }
+        
         collectionsRepository.saveCollection(collection)
     }
     
