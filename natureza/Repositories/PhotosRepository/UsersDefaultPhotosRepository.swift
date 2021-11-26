@@ -124,7 +124,7 @@ class UserDefaultsPhotoRepository: PhotosRepository {
     
     func getPhotos(from collection: PhotoCollection) -> [Photo] {
         var photos: [Photo] = []
-        for id in collection.photos {
+        for id in collection.photosIds {
             guard let photo = getPhotoById(id) else { continue }
             photos.append(photo)
         }
