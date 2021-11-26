@@ -121,4 +121,13 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         guard let lastImage = keys.last else { return nil }
         return getPhotoById(lastImage)
     }
+    
+    func getPhotos(from collection: PhotoCollection) -> [Photo] {
+        var photos: [Photo] = []
+        for id in collection.photos {
+            guard let photo = getPhotoById(id) else { continue }
+            photos.append(photo)
+        }
+        return photos
+    }
 }
