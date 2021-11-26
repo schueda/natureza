@@ -10,7 +10,7 @@ import UIKit
 class CollectionsModalViewController: UIViewController {
     let viewModel: CollectionsModalViewModel
     let photo: Photo
-    var collections: [PhotoCollection] = []
+    var collections: [PhotoCollection] = [PhotoCollection(name: "", photos: [], notification: Notification(), note: "")]
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -71,22 +71,32 @@ class CollectionsModalViewController: UIViewController {
 
 extension CollectionsModalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let collection = indexPath.row == 0 ? PhotoCollection(name: "", photos: [], notification: Notification(), note: "") : collections[indexPath.row - 1]
+        
         guard let photoId = photo.idFromDate else { return }
-        viewModel.savePhoto(photo)
-        collections[indexPath.row].photos.append(photoId)
-        navigationController?.pushViewController(CollectionViewController(collection: collections[indexPath.row]), animated: true)
+        viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
+        
+        
+        collection.photosIds.append(photoId)
+        navigationController?.pushViewController(CollectionViewController(collection: collection), animated: true)
     }
 }
 
 extension CollectionsModalViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        collections.count
+        collections.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for: indexPath) as! CollectionTableViewCell
+            cell.setCell(image: UIImage(systemName: "plus.rectangle.on.rectangle")!, text: "Nova Coleção")
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "collection", for: indexPath) as! CollectionTableViewCell
-        guard let image = viewModel.getPhoto(from: collections[indexPath.row])?.image else { return cell}
-        cell.setCell(image: image, text: collections[indexPath.row].name)
+        let image = viewModel.getPhoto(from: collections[indexPath.row - 1])?.image
+        cell.setCell(image: image, text: collections[indexPath.row - 1].name)
         return cell
     }
 }

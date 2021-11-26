@@ -11,14 +11,15 @@ class PhotoCollection: Codable {
     var id: UUID
     var name: String
     
-    var photos: [String] = []
+    var photosBuffer: [Photo]? = []
+    var photosIds: [String] = []
     var notification: Notification?
     var note: String?
     
     init(id: UUID = UUID(), name: String, photos: [String], notification: Notification, note: String?) {
         self.id = id
         self.name = name
-        self.photos = photos
+        self.photosIds = photos
         self.notification = notification
         self.note = note
     }
@@ -26,7 +27,7 @@ class PhotoCollection: Codable {
     enum CodingKeys: CodingKey {
         case id
         case name
-        case photos
+        case photosIds
         case note
     }
     

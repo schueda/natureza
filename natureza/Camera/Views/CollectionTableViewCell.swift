@@ -18,9 +18,9 @@ class CollectionTableViewCell: UITableViewCell {
     
     lazy var previewImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .appGray5
         imageView.layer.cornerRadius = 3
         imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -94,7 +94,7 @@ class CollectionTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setCell(image: UIImage, text: String) {
+    func setCell(image: UIImage?, text: String) {
         previewImageView.image = image
         collectionTitleLabel.text = text
     }

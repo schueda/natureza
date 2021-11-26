@@ -64,8 +64,7 @@ class AfterShotViewController: UIViewController {
         
         let photo = Photo(note: notesVC.noteTextView.text ?? "", image: image)
         if let collection = collection {
-            viewModel.savePhoto(photo)
-            viewModel.savePhotoToCollection(photo: photo, collection: collection)
+            viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
             navigationController?.popViewController(animated: true)
             navigationController?.popViewController(animated: true)
         } else {
