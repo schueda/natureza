@@ -38,6 +38,7 @@
 		755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */; };
 		756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756384DC273BEE47001D1FBC /* CameraViewController.swift */; };
 		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
+		75B1040A27511E9E00BBBB4D /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1040927511E9E00BBBB4D /* VideoMaker.swift */; };
 		75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D99913274E80BE00917CD9 /* NotesViewController.swift */; };
 		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		756384DC273BEE47001D1FBC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		759941F12745291C00580D14 /* FIleManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleManagerServices.swift; sourceTree = "<group>"; };
+		75B1040927511E9E00BBBB4D /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoMaker.swift; path = natureza/Collections/Services/VideoMaker.swift; sourceTree = SOURCE_ROOT; };
 		75D99913274E80BE00917CD9 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DB5722745419200D4AD3F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 		61C2BF8F274BCE4900A5F72F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				75B1040927511E9E00BBBB4D /* VideoMaker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
 				75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */,
 				61EC1BE8274D1FA0001DF29E /* UserDefaultsCollectionRepository.swift in Sources */,
+				75B1040A27511E9E00BBBB4D /* VideoMaker.swift in Sources */,
 				61EC1BED274D21DB001DF29E /* UsersDefaultPhotosRepository.swift in Sources */,
 				6198728C274E6B40008908FD /* HomeViewModel.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotView.swift in Sources */,
@@ -631,7 +635,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46LT924HJ5;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";
@@ -640,8 +644,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -663,7 +669,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 46LT924HJ5;
+				DEVELOPMENT_TEAM = C7K95G5W2H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";
@@ -672,8 +678,10 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

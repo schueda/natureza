@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 class CollectionViewModel {
+   
     let collectionsRepository: CollectionsRepository = UserDefaultsCollectionRepository.shared
     let photosRepository: PhotosRepository = UserDefaultsPhotoRepository.shared
     
@@ -27,4 +29,10 @@ class CollectionViewModel {
         photosRepository.getPhotos(from: collection)
     }
     
+    
+   
+    
 }
+
+
+ 
