@@ -1,5 +1,5 @@
 //
-//  AfterShotViewController.swift
+//  AfterShotView.swift
 //  natureza
 //
 //  Created by Gabriel Puppi on 16/11/21.
@@ -8,14 +8,28 @@
 import UIKit
 import SnapKit
 
-class AfterShotViewController: UIViewController {
+class AfterShotView: UIView {
+    let viewModel: CameraViewModel
+    
     let collection: PhotoCollection?
-    let viewModel = AfterShotViewModel()
+    var navigationController: UINavigationController?
     let notesVC = NotesViewController()
     
-    var image: UIImage
+    var image: UIImage? {
+        didSet {
+            afterShotImageView.image = image
+        }
+    }
     
-    let dismissImageButton: UIButton = {
+    lazy var afterShotImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    lazy var dismissImageButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "arrow.uturn.backward"), for: .normal)
         button.setTitle("Descartar", for: .normal)
@@ -25,10 +39,10 @@ class AfterShotViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(dismissPhoto), for: .touchUpInside)
         return button
-    
+        
     }()
     
-    let confirmPhotoButton: UIButton = {
+    lazy var confirmPhotoButton: UIButton = {
         let button = UIButton()
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = false
@@ -44,7 +58,7 @@ class AfterShotViewController: UIViewController {
         return button
     }()
     
-    let notesButton: UIButton = {
+    lazy var notesButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "note.text.badge.plus"), for: .normal)
         button.setTitle("Anotar", for: .normal)
@@ -57,23 +71,22 @@ class AfterShotViewController: UIViewController {
     }()
     
     @objc func dismissPhoto(){
-        self.navigationController?.popViewController(animated: false)
+        viewModel.startCamera()
+        alpha = 0
     }
     
     @objc func confirmPhoto(){
-        
         let photo = Photo(note: notesVC.noteTextView.text ?? "", image: image)
         if let collection = collection {
             viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
-            navigationController?.popViewController(animated: true)
-            navigationController?.popViewController(animated: true)
+            navigationController?.dismiss(animated: true, completion: nil)
         } else {
             let nav = UINavigationController(rootViewController: CollectionsModalViewController(viewModel: CollectionsModalViewModel(), photo: photo))
             nav.modalPresentationStyle = .pageSheet
             if let sheet = nav.sheetPresentationController {
                 sheet.detents = [.medium()]
             }
-            present(nav, animated: true, completion: nil)
+            navigationController?.present(nav, animated: true, completion: nil)
         }
     }
     
@@ -83,83 +96,57 @@ class AfterShotViewController: UIViewController {
         if let sheet = nav.sheetPresentationController {
             sheet.detents = [.medium()]
         }
-        present(nav, animated: true, completion: nil)
-        
- }
-        
+        navigationController?.present(nav, animated: true, completion: nil)
+    }
     
-    
-  override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+    init(frame: CGRect = .zero, collection: PhotoCollection?, navigationController: UINavigationController?, viewModel: CameraViewModel) {
+        self.collection = collection
+        self.navigationController = navigationController
+        self.viewModel = viewModel
+        super.init(frame: frame)
+        
         setupAfterShot()
         setupDismissButton()
         setupConfirmButton()
         setupNotesButton()
-        
-
-        // Do any additional setup after loading the view.
     }
-    
-    init(image: UIImage, collection: PhotoCollection?) {
-        self.collection = collection
-        self.image = image
-        super.init(nibName: nil, bundle: nil)
-    } 
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupDismissButton(){
-        view.addSubview(dismissImageButton)
+        addSubview(dismissImageButton)
         dismissImageButton.snp.makeConstraints { make in
             make.height.equalTo(80)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(96)
-        
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.leading).offset(96)
         }
-       
     }
-
     
-   func setupConfirmButton() {
-        view.addSubview(confirmPhotoButton)
+    func setupConfirmButton() {
+        addSubview(confirmPhotoButton)
         confirmPhotoButton.snp.makeConstraints { make in
             make.height.equalTo(80)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-            make.leading.equalTo(view.safeAreaLayoutGuide.snp.leading).offset(72)
-            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-72)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.leading.equalTo(safeAreaLayoutGuide.snp.leading).offset(72)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-72)
         }
-   }
-    
+    }
     
     func setupNotesButton(){
-        view.addSubview(notesButton)
-       notesButton.snp.makeConstraints { make in
-           make.height.equalTo(80)
-           make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-32)
-           make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailing).offset(-32)
-        
+        addSubview(notesButton)
+        notesButton.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom).offset(-32)
+            make.trailing.equalTo(safeAreaLayoutGuide.snp.trailing).offset(-32)
         }
-
-        
     }
     
-   func setupAfterShot() {
-        
-        let image = image
-        let afterShotView = UIImageView()
-        afterShotView.image = image
-        afterShotView.contentMode = .scaleAspectFill
-        
-        view.addSubview(afterShotView)
-        afterShotView.snp.makeConstraints { make in
+    func setupAfterShot() {
+        addSubview(afterShotImageView)
+        afterShotImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    
     }
-    
-    
 }

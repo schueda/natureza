@@ -23,7 +23,9 @@ class AddImageCollectionViewCell: UICollectionViewCell {
     }()
     
     @objc private func clickedButton() {
-        navigationController?.pushViewController(CameraViewController(collection: collection), animated: false)
+        let viewController = UINavigationController(rootViewController: CameraViewController(collection: collection))
+        viewController.modalPresentationStyle = .fullScreen
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
     
     override init(frame: CGRect) {
