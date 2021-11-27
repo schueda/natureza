@@ -10,9 +10,6 @@ import CameraManager
 import Photos
 
 protocol CameraViewModelDelegate: AnyObject {
-    
-    
-    
 }
 
 class CameraViewModel: CameraViewModelDelegate {
@@ -23,7 +20,6 @@ class CameraViewModel: CameraViewModelDelegate {
     var imageTaken: UIImage?
     weak var delegate: CameraViewModelDelegate?
     
-    
     func startCamera() {
         cameraManager.resumeCaptureSession()
         cameraManager.captureSession?.automaticallyConfiguresCaptureDeviceForWideColor = true
@@ -32,28 +28,17 @@ class CameraViewModel: CameraViewModelDelegate {
     }
     
     func stopCamera() {
-        
         cameraManager.stopCaptureSession()
-        
     }
-    
     
     func switchCamera(){
-        
         switch cameraManager.cameraDevice {
-            
         case .back:
-            
             cameraManager.cameraDevice = .front
-            
         case .front:
-            
             cameraManager.cameraDevice = .back
-            
         }
-        
     }
-    
     
     func setOverlay(with collection: PhotoCollection?) -> UIImage? {
         if let id = collection?.photosIds.last {
@@ -62,21 +47,20 @@ class CameraViewModel: CameraViewModelDelegate {
         return photosRepository.getLastPhoto()?.image
     }
     
-    
     func takePhoto(completion: @escaping () -> Void){
-        
         cameraManager.capturePictureWithCompletion { result in
             switch result {
-                
             case .success(let content):
                 self.imageTaken = content.asImage
-                
             case .failure:
                 print("couldnt take pic")
             }
             completion()
         }
-        
+    }
+    
+    func savePhotoToCollectionBuffer(photo: Photo, collection: PhotoCollection) {
+        collection.photosBuffer?.append(photo)
     }
 }
 
