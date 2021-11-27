@@ -686,10 +686,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Natour;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to use microfone to capture audio video";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select photos to timelapse";
@@ -720,10 +721,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Natour;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need to use microfone to capture audio video";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Select photos to timelapse";
