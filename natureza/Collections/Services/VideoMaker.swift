@@ -4,7 +4,7 @@ import Photos
 
 struct RenderSettings {
     
-    var size : CGSize = CGSize(width: 1920, height: 1080)
+    var size : CGSize = CGSize(width: 1080, height: 1920)
     var fps: Int32 = 3  // frames per second
     var avCodecKey = AVVideoCodecType.h264
     var videoFilename = "render"

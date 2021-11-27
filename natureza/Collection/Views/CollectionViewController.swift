@@ -56,6 +56,7 @@ class CollectionViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
         button.setTitleColor(.appGray5, for: .normal)
         button.setTitle("Gerar vídeo", for: .normal)
+        button.addTarget(self, action: #selector(generateVideoClicked), for: .touchUpInside)
         
         return button
     }()
@@ -146,6 +147,19 @@ class CollectionViewController: UIViewController {
 
         viewModel.save(collection: collection)
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc private func generateVideoClicked() {
+    
+        let settings = RenderSettings()
+        guard let collection = collection else { return }
+        let imageAnimator = ImageAnimator(renderSettings: settings, collection: collection)
+        imageAnimator.render() {
+            
+            print("done")
+            
+        }
+    
     }
     
     private func setupTitleTextField() {
