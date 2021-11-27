@@ -32,7 +32,9 @@ class CreateViewController: UIViewController {
     }()
     
     @objc private func addImageTapped() {
-        navigationController?.pushViewController(CameraViewController(), animated: false)
+        let viewController = UINavigationController(rootViewController: CameraViewController())
+        viewController.modalPresentationStyle = .fullScreen
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
 
     lazy var addCollectionButton: UIButton = {
