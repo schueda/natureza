@@ -15,7 +15,7 @@ class AddImageCollectionViewCell: UICollectionViewCell {
         let button = UIButton()
         button.addTarget(self, action: #selector(clickedButton), for: .touchUpInside)
         
-        let view = CreateButtonView(text: "Adicionar imagem")
+        let view = CreateButtonView(text: "Adicionar imagem", image: UIImage(systemName: "plus"))
         button.addSubview(view)
         view.snp.makeConstraints { $0.edges.equalToSuperview() }
         

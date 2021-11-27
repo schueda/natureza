@@ -38,9 +38,11 @@ class CollectionViewController: UIViewController {
         guard let text = titleTextField.text else { return }
         if text != "" {
             navigationItem.rightBarButtonItem?.isEnabled = true
+            navigationItem.title = text
             
         } else {
             navigationItem.rightBarButtonItem?.isEnabled = false
+            navigationItem.title = "Coleção"
         }
     }
     
@@ -130,7 +132,9 @@ class CollectionViewController: UIViewController {
     }
     
     private func setupView() {
-        title = collection?.name ?? "Nova coleção"
+        if let collection = collection {
+            title = collection.name.isEmpty ? "Coleção" : collection.name
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(clickedSave))
         enableOrDisableSaveButton()
         view.backgroundColor = .appBackground2

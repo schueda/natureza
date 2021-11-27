@@ -32,7 +32,7 @@ class TabBarViewController: UITabBarController{
     
     private func getCreateViewController() -> UINavigationController {
         let viewController = CreateViewController()
-        viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
+        viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle")!, tag: 1)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }
@@ -51,23 +51,3 @@ class ProfileVC: UIViewController{
         view.backgroundColor = .systemGreen
     }
 }
-
-
-#if DEBUG
-import SwiftUI
-struct TabBarViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView().previewDevice("iPhone 12")
-    }
-
-    struct ContentView: UIViewControllerRepresentable {
-
-        func makeUIViewController(context: Context) -> UIViewController {
-            UINavigationController(rootViewController: TabBarViewController())
-        }
-
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
-    }
-}
-#endif

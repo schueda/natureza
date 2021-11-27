@@ -22,7 +22,7 @@ class CreateViewController: UIViewController {
         let button = UIButton()
         button.addTarget(self, action: #selector(addImageTapped), for: .touchUpInside)
         
-        let view = CreateButtonView(text: "Adicionar imagem")
+        let view = CreateButtonView(text: "Adicionar imagem", image: UIImage(systemName: "camera"))
         button.addSubview(view)
         view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -41,7 +41,7 @@ class CreateViewController: UIViewController {
         let button = UIButton()
         button.addTarget(self, action: #selector(addCollectionTapped), for: .touchUpInside)
         
-        let view = CreateButtonView(text: "Adicionar coleção")
+        let view = CreateButtonView(text: "Adicionar coleção", image: UIImage(systemName: "plus.rectangle.on.rectangle"))
         button.addSubview(view)
         view.snp.makeConstraints { make in
             make.edges.equalToSuperview()

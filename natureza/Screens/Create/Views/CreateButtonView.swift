@@ -9,6 +9,7 @@ import UIKit
 
 class CreateButtonView: UIView {
     let text: String
+    let image: UIImage?
     
     lazy var stack: UIStackView = {
         let stack = UIStackView()
@@ -29,15 +30,16 @@ class CreateButtonView: UIView {
     
     lazy var plusImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "plus")
+        imageView.image = image
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         imageView.tintColor = .appBackground2
         return imageView
     }()
     
-    init(frame: CGRect = .zero, text: String) {
+    init(frame: CGRect = .zero, text: String, image: UIImage?) {
         self.text = text
+        self.image = image
         super.init(frame: frame)
         
         backgroundColor = .tintColor.withAlphaComponent(0.6)
