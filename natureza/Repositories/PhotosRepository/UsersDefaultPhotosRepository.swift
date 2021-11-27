@@ -20,9 +20,6 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         saveKey(from: photo)
         saveCodable(from: photo)
         saveImage(from: photo)
-        for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
-            print("\(key) = \(value) \n")
-        }
     }
     
     func SavePhotos(of collection: PhotoCollection) {
