@@ -24,7 +24,7 @@ class TabBarViewController: UITabBarController{
     }
     
     private func getHomeViewController() -> UINavigationController {
-        let viewController = HomeViewController()
+        let viewController = HomeViewController(viewModel: HomeViewModel())
         viewController.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController

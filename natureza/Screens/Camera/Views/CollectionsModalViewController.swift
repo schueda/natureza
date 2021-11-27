@@ -76,8 +76,6 @@ extension CollectionsModalViewController: UITableViewDelegate {
         guard let photoId = photo.idFromDate else { return }
         viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
         
-        
-        collection.photosIds.append(photoId)
         navigationController?.pushViewController(CollectionViewController(collection: collection), animated: true)
     }
 }
