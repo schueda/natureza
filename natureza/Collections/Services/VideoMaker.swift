@@ -4,7 +4,7 @@ import Photos
 
 struct RenderSettings {
     
-    var size : CGSize = CGSize(width: 1080, height: 1920)
+    var size : CGSize = CGSize(width: 1920, height: 1080)
     var fps: Int32 = 3  // frames per second
     var avCodecKey = AVVideoCodecType.h264
     var videoFilename = "render"
@@ -21,9 +21,6 @@ struct RenderSettings {
         fatalError("URLForDirectory() failed")
     }
 }
-
-
-
 
 class ImageAnimator {
     
@@ -143,15 +140,15 @@ class VideoWriter {
         
         let horizontalRatio = size.width / image.size.width
         let verticalRatio = size.height / image.size.height
-        //aspectRatio = max(horizontalRatio, verticalRatio) // ScaleAspectFill
-        let aspectRatio = min(horizontalRatio, verticalRatio) // ScaleAspectFit
+        let aspectRatio = max(horizontalRatio, verticalRatio) // ScaleAspectFill
+       // let aspectRatio = min(horizontalRatio, verticalRatio) // ScaleAspectFit
         
         let newSize = CGSize(width: image.size.width * aspectRatio, height: image.size.height * aspectRatio)
         
         let x = newSize.width < size.width ? (size.width - newSize.width) / 2 : 0
         let y = newSize.height < size.height ? (size.height - newSize.height) / 2 : 0
         
-        context?.draw(image.cgImage!, in: CGRect(x:x,y: y, width: newSize.width, height: newSize.height))
+        context?.draw(image.cgImage!, in: CGRect(x:x,y: y, width: size.width, height: size.height))
         CVPixelBufferUnlockBaseAddress(pixelBuffer, CVPixelBufferLockFlags(rawValue: 0))
         
         return pixelBuffer
@@ -159,6 +156,7 @@ class VideoWriter {
     
     init(renderSettings: RenderSettings) {
         self.renderSettings = renderSettings
+        
     }
     
     func start() {
@@ -193,6 +191,7 @@ class VideoWriter {
         
         videoWriter = createAssetWriter(outputURL: renderSettings.outputURL)
         videoWriterInput = AVAssetWriterInput(mediaType: AVMediaType.video, outputSettings: avOutputSettings)
+        videoWriterInput.transform = CGAffineTransform(rotationAngle: Double.pi/2)
         
         if videoWriter.canAdd(videoWriterInput) {
             videoWriter.add(videoWriterInput)
@@ -217,19 +216,23 @@ class VideoWriter {
         
         precondition(videoWriter != nil, "Call start() to initialze the writer")
         
+        
         let queue = DispatchQueue(label: "mediaInputQueue")
         videoWriterInput.requestMediaDataWhenReady(on: queue) {
             let isFinished = appendPixelBuffers?(self) ?? false
             if isFinished {
+               
                 self.videoWriterInput.markAsFinished()
                 self.videoWriter.finishWriting() {
+                   
                     DispatchQueue.main.async {
+                    
                         completion?()
                     }
-                }
+               }
             }
             else {
-                // Fall through. The closure will be called again when the writer is ready.
+                
             }
         }
     }

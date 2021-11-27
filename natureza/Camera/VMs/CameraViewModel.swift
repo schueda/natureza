@@ -25,6 +25,9 @@ class CameraViewModel: CameraViewModelDelegate {
         cameraManager.captureSession?.automaticallyConfiguresCaptureDeviceForWideColor = true
         cameraManager.writeFilesToPhoneLibrary = false
         cameraManager.cameraOutputQuality = .hd1920x1080
+        cameraManager.shouldRespondToOrientationChanges = false
+        
+        
     }
     
     func stopCamera() {
