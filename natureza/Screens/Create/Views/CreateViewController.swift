@@ -57,7 +57,7 @@ class CreateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Criar"
-        view.backgroundColor = .appBackground2
+        view.backgroundColor = .systemBackground
 
         
         setupButtonsStack()

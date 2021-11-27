@@ -9,9 +9,8 @@ import SnapKit
 
 class HomeCollectionView: UIView {
     let navigationController: UINavigationController?
-    let viewModel = HomeViewModel()
-    var collections: [PhotoCollection] = []
-    
+    let viewModel: HomeViewModel
+    var collections: [PhotoCollection]
     
     lazy var homeCollection: UICollectionView = {
         
@@ -29,8 +28,10 @@ class HomeCollectionView: UIView {
         return collection
     }()
     
-    init(frame: CGRect = .zero, navigationController: UINavigationController?) {
+    init(frame: CGRect = .zero, navigationController: UINavigationController?, viewModel: HomeViewModel, collections: [PhotoCollection]) {
         self.navigationController = navigationController
+        self.viewModel = viewModel
+        self.collections = collections
         super.init(frame: frame)
         
         setupHomeCollection()
@@ -38,7 +39,6 @@ class HomeCollectionView: UIView {
     }
    
     func reloadCollection() {
-        collections = viewModel.getAllCollections()
         homeCollection.reloadData()
 
     }
