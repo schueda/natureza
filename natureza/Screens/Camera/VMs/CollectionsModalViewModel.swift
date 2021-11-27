@@ -20,11 +20,11 @@ class CollectionsModalViewModel {
         return photosRepository.getPhotoById(photoId)
     }
     
-    func savePhoto(_ photo: Photo) {
-        photosRepository.SavePhoto(photo)
-    }
-    
     func savePhotoToCollectionBuffer(photo: Photo, collection: PhotoCollection) {
+        if photo.note == "Escreva uma nota sobre a imagem" {
+            photo.note = ""
+        }
+        
         collection.photosBuffer?.append(photo)
     }
 }

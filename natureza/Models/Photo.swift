@@ -14,10 +14,10 @@ class Photo: Codable {
         "\(date.timeIntervalSince1970)"
     }
     
-    var note: String?
+    var note: String
     var image: UIImage?
     
-    init(note: String? = nil, image: UIImage?) {
+    init(note: String, image: UIImage?) {
         self.note = note
         self.image = image
     }

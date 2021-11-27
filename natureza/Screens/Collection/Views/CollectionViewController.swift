@@ -78,14 +78,18 @@ class CollectionViewController: UIViewController {
         textView.delegate = self
         textView.font = .systemFont(ofSize: 13, weight: .regular)
         
-        textView.text = collection?.note ?? "Escreva uma nota sobre a coleção"
-        
-        if collection == nil {
-            textView.textColor = .appGray3
+        if let collection = collection {
+            if collection.note.isEmpty {
+                textView.textColor = .appGray3
+                textView.text = "Escreva uma nota sobre a coleção"
+            } else {
+                textView.textColor = .appLabelLight
+                textView.text = collection.note
+            }
         } else {
-            textView.textColor = .appLabelLight
+            textView.textColor = .appGray3
+            textView.text = "Escreva uma nota sobre a coleção"
         }
-        
         
         return textView
     }()
@@ -133,15 +137,9 @@ class CollectionViewController: UIViewController {
     }
     
     @objc private func clickedSave() {
-        var note: String?
-        if noteTextView.text == "Escreva uma nota sobre a coleção" {
-            note = nil
-        } else {
-            note = noteTextView.text
-        }
         
         collection?.name = titleTextField.text ?? ""
-        collection?.note = note
+        collection?.note = noteTextView.text ?? ""
         
         guard let collection = collection else { return }
 
@@ -215,7 +213,7 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.appGray3 {
+        if textView.textColor == UIColor.appGray3  {
             textView.text = nil
             textView.textColor = UIColor.appLabelLight
         }
@@ -227,5 +225,4 @@ extension CollectionViewController: UITextViewDelegate {
             textView.textColor = UIColor.appGray3
         }
     }
-    
 }

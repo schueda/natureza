@@ -14,6 +14,9 @@
 		61832A0227504E1C00D2C721 /* CollectionsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A0127504E1C00D2C721 /* CollectionsModalViewController.swift */; };
 		61832A042750565000D2C721 /* CollectionsModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A032750565000D2C721 /* CollectionsModalViewModel.swift */; };
 		61832A062750598C00D2C721 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A052750598C00D2C721 /* CollectionTableViewCell.swift */; };
+		61832A3D2752A71C00D2C721 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A3C2752A71C00D2C721 /* PhotoViewController.swift */; };
+		61832A3F2752AAF900D2C721 /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A3E2752AAF900D2C721 /* VideoMaker.swift */; };
+		61832A412752B31900D2C721 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A402752B31900D2C721 /* PhotoViewModel.swift */; };
 		6198728A274E6970008908FD /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61987289274E6970008908FD /* CollectionViewModel.swift */; };
 		6198728C274E6B40008908FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198728B274E6B40008908FD /* HomeViewModel.swift */; };
 		61C2BF91274BCE7E00A5F72F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */; };
@@ -38,7 +41,6 @@
 		755BB4D0273AA0990055563A /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */; };
 		756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756384DC273BEE47001D1FBC /* CameraViewController.swift */; };
 		759941F22745291C00580D14 /* FIleManagerServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759941F12745291C00580D14 /* FIleManagerServices.swift */; };
-		75B1040A27511E9E00BBBB4D /* VideoMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B1040927511E9E00BBBB4D /* VideoMaker.swift */; };
 		75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D99913274E80BE00917CD9 /* NotesViewController.swift */; };
 		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,9 @@
 		61832A0127504E1C00D2C721 /* CollectionsModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsModalViewController.swift; sourceTree = "<group>"; };
 		61832A032750565000D2C721 /* CollectionsModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsModalViewModel.swift; sourceTree = "<group>"; };
 		61832A052750598C00D2C721 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		61832A3C2752A71C00D2C721 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		61832A3E2752AAF900D2C721 /* VideoMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoMaker.swift; sourceTree = "<group>"; };
+		61832A402752B31900D2C721 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		61987289274E6970008908FD /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6198728B274E6B40008908FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +81,6 @@
 		755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		756384DC273BEE47001D1FBC /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		759941F12745291C00580D14 /* FIleManagerServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIleManagerServices.swift; sourceTree = "<group>"; };
-		75B1040927511E9E00BBBB4D /* VideoMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoMaker.swift; path = natureza/Collections/Services/VideoMaker.swift; sourceTree = SOURCE_ROOT; };
 		75D99913274E80BE00917CD9 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		90FC692D58A52B88DEFF14F4 /* Pods_natureza.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_natureza.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3DB5722745419200D4AD3F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -128,10 +132,7 @@
 				6131F53927394A8C00A82704 /* AppDelegate.swift */,
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
 				9A3DB5722745419200D4AD3F /* TabBarViewController.swift */,
-				759941E6274451D600580D14 /* Collections */,
-				61DE48B82747E60B00D0FBE5 /* Create */,
-				756384DB273BEDAE001D1FBC /* Camera */,
-				61C2BF89274BCE2B00A5F72F /* Collection */,
+				61832A382752A65800D2C721 /* Screens */,
 				61DE48C1274A940B00D0FBE5 /* Extensions */,
 				61EC1BDC274D1736001DF29E /* Repositories */,
 				61EC1BDF274D17F1001DF29E /* Models */,
@@ -139,6 +140,43 @@
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
 			path = natureza;
+			sourceTree = "<group>";
+		};
+		61832A382752A65800D2C721 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				61832A392752A6C900D2C721 /* Photo */,
+				61C2BF89274BCE2B00A5F72F /* Collection */,
+				756384DB273BEDAE001D1FBC /* Camera */,
+				61DE48B82747E60B00D0FBE5 /* Create */,
+				759941E6274451D600580D14 /* Collections */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		61832A392752A6C900D2C721 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				61832A3A2752A6EF00D2C721 /* Views */,
+				61832A3B2752A6F900D2C721 /* VMs */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		61832A3A2752A6EF00D2C721 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61832A3C2752A71C00D2C721 /* PhotoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61832A3B2752A6F900D2C721 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+				61832A402752B31900D2C721 /* PhotoViewModel.swift */,
+			);
+			path = VMs;
 			sourceTree = "<group>";
 		};
 		61C2BF89274BCE2B00A5F72F /* Collection */ = {
@@ -182,7 +220,7 @@
 		61C2BF8F274BCE4900A5F72F /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				75B1040927511E9E00BBBB4D /* VideoMaker.swift */,
+				61832A3E2752AAF900D2C721 /* VideoMaker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -496,15 +534,17 @@
 				755BB4CE273A9EC10055563A /* HomeCollectionView.swift in Sources */,
 				61C2BF93274BDB0100A5F72F /* PhotosCollectionView.swift in Sources */,
 				756384DD273BEE47001D1FBC /* CameraViewController.swift in Sources */,
+				61832A412752B31900D2C721 /* PhotoViewModel.swift in Sources */,
 				75D99914274E80BE00917CD9 /* NotesViewController.swift in Sources */,
+				61832A3F2752AAF900D2C721 /* VideoMaker.swift in Sources */,
 				61EC1BE8274D1FA0001DF29E /* UserDefaultsCollectionRepository.swift in Sources */,
-				75B1040A27511E9E00BBBB4D /* VideoMaker.swift in Sources */,
 				61EC1BED274D21DB001DF29E /* UsersDefaultPhotosRepository.swift in Sources */,
 				6198728C274E6B40008908FD /* HomeViewModel.swift in Sources */,
 				754219852743DADE00A40327 /* AfterShotView.swift in Sources */,
 				61EC1BE2274D181D001DF29E /* PhotoCollection.swift in Sources */,
 				61C2BF95274BDFEC00A5F72F /* NotificationView.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
+				61832A3D2752A71C00D2C721 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,7 +675,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";
@@ -669,7 +709,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C7K95G5W2H;
+				DEVELOPMENT_TEAM = 46LT924HJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = natureza/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Used to take photos and track nature elements";

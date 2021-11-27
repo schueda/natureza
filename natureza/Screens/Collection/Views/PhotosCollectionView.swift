@@ -40,6 +40,7 @@ class PhotosCollectionView: UIView {
          navigationController: UINavigationController?,
          viewModel: CollectionViewModel,
          photos: [Photo]) {
+        
         photoCollection = collection
         self.navigationController = navigationController
         self.viewModel = viewModel
@@ -60,7 +61,9 @@ class PhotosCollectionView: UIView {
 }
 
 extension PhotosCollectionView: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(PhotoViewController(photo: photos[indexPath.row], viewModel: PhotoViewModel()), animated: true)
+    }
 }
 
 extension PhotosCollectionView: UICollectionViewDataSource {
