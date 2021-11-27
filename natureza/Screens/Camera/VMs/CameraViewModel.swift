@@ -63,6 +63,10 @@ class CameraViewModel: CameraViewModelDelegate {
     }
     
     func savePhotoToCollectionBuffer(photo: Photo, collection: PhotoCollection) {
+        if photo.note == "Escreva uma nota sobre a imagem" {
+            photo.note = ""
+        }
+        
         collection.photosBuffer?.append(photo)
     }
 }

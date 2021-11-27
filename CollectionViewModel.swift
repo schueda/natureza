@@ -22,6 +22,10 @@ class CollectionViewModel {
             collection.photosIds.append(photoId)
         }
         
+        if collection.note == "Escreva uma nota sobre a coleção" {
+            collection.note = ""
+        }
+        
         collectionsRepository.saveCollection(collection)
     }
     
