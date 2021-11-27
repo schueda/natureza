@@ -19,9 +19,7 @@ class AfterShotViewModel {
         photosRepository.SavePhoto(photo)
     }
     
-    func savePhotoToCollection(photo: Photo, collection: PhotoCollection) {
-        guard let photoId = photo.idFromDate else { return }
-        collection.photos.append(photoId)
-        collectionsRepository.saveCollection(collection)
+    func savePhotoToCollectionBuffer(photo: Photo, collection: PhotoCollection) {
+        collection.photosBuffer?.append(photo)
     }
 }

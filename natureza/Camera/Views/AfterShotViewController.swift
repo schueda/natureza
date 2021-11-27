@@ -63,9 +63,17 @@ class AfterShotViewController: UIViewController {
     @objc func confirmPhoto(){
         
         let photo = Photo(note: notesVC.noteTextView.text ?? "", image: image)
-        viewModel.savePhoto(photo)
         if let collection = collection {
-            viewModel.savePhotoToCollection(photo: photo, collection: collection)
+            viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
+            navigationController?.popViewController(animated: true)
+            navigationController?.popViewController(animated: true)
+        } else {
+            let nav = UINavigationController(rootViewController: CollectionsModalViewController(viewModel: CollectionsModalViewModel(), photo: photo))
+            nav.modalPresentationStyle = .pageSheet
+            if let sheet = nav.sheetPresentationController {
+                sheet.detents = [.medium()]
+            }
+            present(nav, animated: true, completion: nil)
         }
     }
     

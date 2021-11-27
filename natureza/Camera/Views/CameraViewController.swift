@@ -78,6 +78,8 @@ class CameraViewController: UIViewController {
     @objc func dismissCamera() {
         
         navigationController?.popViewController(animated: true)
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     
@@ -145,6 +147,8 @@ class CameraViewController: UIViewController {
         setupSetOverlayButton()
         setOverlayView()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         viewModel.startCamera()
