@@ -14,6 +14,7 @@
 		61832A0227504E1C00D2C721 /* CollectionsModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A0127504E1C00D2C721 /* CollectionsModalViewController.swift */; };
 		61832A042750565000D2C721 /* CollectionsModalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A032750565000D2C721 /* CollectionsModalViewModel.swift */; };
 		61832A062750598C00D2C721 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A052750598C00D2C721 /* CollectionTableViewCell.swift */; };
+		61832A3D2752A71C00D2C721 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61832A3C2752A71C00D2C721 /* PhotoViewController.swift */; };
 		6198728A274E6970008908FD /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61987289274E6970008908FD /* CollectionViewModel.swift */; };
 		6198728C274E6B40008908FD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6198728B274E6B40008908FD /* HomeViewModel.swift */; };
 		61C2BF91274BCE7E00A5F72F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */; };
@@ -53,6 +54,7 @@
 		61832A0127504E1C00D2C721 /* CollectionsModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsModalViewController.swift; sourceTree = "<group>"; };
 		61832A032750565000D2C721 /* CollectionsModalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsModalViewModel.swift; sourceTree = "<group>"; };
 		61832A052750598C00D2C721 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		61832A3C2752A71C00D2C721 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		61987289274E6970008908FD /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = SOURCE_ROOT; };
 		6198728B274E6B40008908FD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		61C2BF90274BCE7E00A5F72F /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
@@ -128,10 +130,7 @@
 				6131F53927394A8C00A82704 /* AppDelegate.swift */,
 				6131F53B27394A8C00A82704 /* SceneDelegate.swift */,
 				9A3DB5722745419200D4AD3F /* TabBarViewController.swift */,
-				759941E6274451D600580D14 /* Collections */,
-				61DE48B82747E60B00D0FBE5 /* Create */,
-				756384DB273BEDAE001D1FBC /* Camera */,
-				61C2BF89274BCE2B00A5F72F /* Collection */,
+				61832A382752A65800D2C721 /* Screens */,
 				61DE48C1274A940B00D0FBE5 /* Extensions */,
 				61EC1BDC274D1736001DF29E /* Repositories */,
 				61EC1BDF274D17F1001DF29E /* Models */,
@@ -139,6 +138,42 @@
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 			);
 			path = natureza;
+			sourceTree = "<group>";
+		};
+		61832A382752A65800D2C721 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				61832A392752A6C900D2C721 /* Photo */,
+				61C2BF89274BCE2B00A5F72F /* Collection */,
+				756384DB273BEDAE001D1FBC /* Camera */,
+				61DE48B82747E60B00D0FBE5 /* Create */,
+				759941E6274451D600580D14 /* Collections */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		61832A392752A6C900D2C721 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				61832A3A2752A6EF00D2C721 /* Views */,
+				61832A3B2752A6F900D2C721 /* VMs */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		61832A3A2752A6EF00D2C721 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				61832A3C2752A71C00D2C721 /* PhotoViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		61832A3B2752A6F900D2C721 /* VMs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VMs;
 			sourceTree = "<group>";
 		};
 		61C2BF89274BCE2B00A5F72F /* Collection */ = {
@@ -505,6 +540,7 @@
 				61EC1BE2274D181D001DF29E /* PhotoCollection.swift in Sources */,
 				61C2BF95274BDFEC00A5F72F /* NotificationView.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
+				61832A3D2752A71C00D2C721 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
