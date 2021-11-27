@@ -123,4 +123,9 @@ class UserDefaultsPhotoRepository: PhotosRepository {
         }
         return photos
     }
+    
+    func getImages(from collection: PhotoCollection) -> [UIImage?] {
+        getPhotos(from: collection).map { $0.image }
+    }
+    
 }

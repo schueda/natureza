@@ -12,4 +12,6 @@ protocol PhotosRepository {
     func getPhotoById(_ id: String) -> Photo?
     func getLastPhoto() -> Photo?
     func getPhotos(from collection: PhotoCollection) -> [Photo]
+    func getImages(from collection: PhotoCollection)
+    
 }
