@@ -74,10 +74,9 @@ class CollectionTableViewCell: UITableViewCell {
     func setupLabel() {
         backView.addSubview(collectionTitleLabel)
         collectionTitleLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(backView.snp.centerY).offset(6)
             make.leading.equalTo(previewImageView.snp.trailing).offset(10)
             make.trailing.equalToSuperview()
-            make.top.equalToSuperview().offset(16)
+            make.centerY.equalToSuperview()
         }
     }
     
