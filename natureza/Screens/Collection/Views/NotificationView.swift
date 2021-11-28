@@ -34,7 +34,7 @@ class NotificationView: UIView {
         button.layer.cornerRadius = 10
         button.setTitle(" Repetir, frequência ", for: .normal)
         button.setTitleColor(.tintColor, for: .normal)
-        button.backgroundColor = .appBackground2
+        button.backgroundColor = .secondarySystemBackground
         return button
     }()
     
@@ -47,10 +47,7 @@ class NotificationView: UIView {
             timePicker,
             repetitionButton,
             toggle
-        ].forEach { contentStack.addArrangedSubview($0)}
-//        setupTimePicker()
-//        setupToggle()
-//        setupRepetitionButton()
+        ].forEach { contentStack.addArrangedSubview($0) }
     }
     
     private func setupStack() {
@@ -60,31 +57,6 @@ class NotificationView: UIView {
             make.trailing.equalToSuperview().offset(-8)
             make.top.equalToSuperview().offset(10)
             make.bottom.equalToSuperview().offset(-10)
-        }
-    }
-    
-    private func setupTimePicker() {
-        addSubview(timePicker)
-        timePicker.snp.makeConstraints { make in
-            make.leading.equalToSuperview().offset(8)
-            make.centerY.equalToSuperview()
-            make.width.equalTo(70)
-        }
-    }
-    
-    private func setupToggle() {
-        toggle.snp.makeConstraints { make in
-            make.centerY.equalToSuperview()
-        }
-    }
-    
-    private func setupRepetitionButton() {
-        addSubview(repetitionButton)
-        repetitionButton.snp.makeConstraints { make in
-            make.leading.equalTo(timePicker.snp.trailing).offset(8)
-            make.trailing.equalTo(toggle.snp.leading).offset(-8)
-            make.height.equalTo(timePicker)
-            make.centerY.equalToSuperview()
         }
     }
     

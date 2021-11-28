@@ -15,10 +15,10 @@ class CollectionViewController: UIViewController {
     
     lazy var titleTextField: UITextField = {
         let textField = UITextField()
-        textField.backgroundColor = .appBackground3
+        textField.backgroundColor = .systemBackground
         textField.layer.cornerRadius = 3
-        textField.textColor = .appLabelLight
-        textField.attributedPlaceholder = NSAttributedString(string: "Nome da coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.appGray3])
+        textField.textColor = .label
+        textField.attributedPlaceholder = NSAttributedString(string: "Nome da coleção", attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
         
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: textField.frame.height))
         textField.leftViewMode = .always
@@ -56,7 +56,7 @@ class CollectionViewController: UIViewController {
         button.backgroundColor = .tintColor
         button.layer.cornerRadius = 10
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .bold)
-        button.setTitleColor(.appGray5, for: .normal)
+        button.setTitleColor(.systemBackground, for: .normal)
         button.setTitle("Gerar vídeo", for: .normal)
         button.addTarget(self, action: #selector(generateVideoClicked), for: .touchUpInside)
         
@@ -65,7 +65,7 @@ class CollectionViewController: UIViewController {
     
     lazy var notificationView: NotificationView = {
         let view = NotificationView()
-        view.backgroundColor = .appBackground3
+        view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -73,7 +73,7 @@ class CollectionViewController: UIViewController {
     
     lazy var noteTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .appBackground3
+        textView.backgroundColor = .systemBackground
         textView.layer.cornerRadius = 3
         textView.isEditable = true
         textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -83,14 +83,14 @@ class CollectionViewController: UIViewController {
         
         if let collection = collection {
             if collection.note.isEmpty {
-                textView.textColor = .appGray3
+                textView.textColor = .secondaryLabel
                 textView.text = "Escreva uma nota sobre a coleção"
             } else {
-                textView.textColor = .appLabelLight
+                textView.textColor = .label
                 textView.text = collection.note
             }
         } else {
-            textView.textColor = .appGray3
+            textView.textColor = .secondaryLabel
             textView.text = "Escreva uma nota sobre a coleção"
         }
         
@@ -138,7 +138,7 @@ class CollectionViewController: UIViewController {
         }
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .done, target: self, action: #selector(clickedSave))
         enableOrDisableSaveButton()
-        view.backgroundColor = .appBackground2
+        view.backgroundColor = .secondarySystemBackground
     }
     
     @objc private func clickedSave() {
@@ -218,16 +218,16 @@ class CollectionViewController: UIViewController {
 
 extension CollectionViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.appGray3  {
+        if textView.textColor == .secondaryLabel  {
             textView.text = nil
-            textView.textColor = UIColor.appLabelLight
+            textView.textColor = .label
         }
     }
 
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
             textView.text = "Escreva uma nota sobre a coleção"
-            textView.textColor = UIColor.appGray3
+            textView.textColor = .secondaryLabel
         }
     }
 }

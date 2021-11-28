@@ -13,7 +13,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 10
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .appGray3
+        imageView.backgroundColor = .systemBackground
         return imageView
     }()
     
