@@ -38,16 +38,10 @@ class TabBarViewController: UITabBarController{
     }
     
     private func getProfileViewController() -> UINavigationController {
-        let viewController =  ProfileVC()
+        let viewController =  ProfileViewController()
         viewController.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person")!, tag: 2)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }
 }
     
-class ProfileVC: UIViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-    }
-}
