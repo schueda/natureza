@@ -159,7 +159,12 @@ class CollectionViewController: UIViewController {
         let imageAnimator = ImageAnimator(renderSettings: settings, collection: collection)
         imageAnimator.render() {
             
-            print("done")
+            let alert = UIAlertController(title: "Vídeo salvo na galeria.", message: "O vídeo gerado a partir da sua coleção foi salvo galeria do Iphone", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+            }))
+            self.present(alert, animated: true, completion: nil)
+
             
         }
     
