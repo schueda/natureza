@@ -79,9 +79,9 @@ class PlaceHolderView: UIView {
         addSubview(logoImageView)
         logoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().offset(-200)
-            make.width.equalTo(175)
-            make.height.equalTo(175)
+            make.top.equalTo(textLabel.snp.bottom).offset(64)
+            make.width.equalTo(UIScreen.main.bounds.width * 0.45)
+            make.height.equalTo(UIScreen.main.bounds.width * 0.45)
         }
     }
 }

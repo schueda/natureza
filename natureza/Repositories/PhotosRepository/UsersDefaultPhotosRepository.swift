@@ -30,7 +30,6 @@ class UserDefaultsPhotoRepository: PhotosRepository {
     }
     
     private func saveKey(from photo: Photo) {
-        
         var keys = getKeys()
         guard let id = photo.idFromDate else { return }
         if keys.firstIndex(of: id) == nil{
