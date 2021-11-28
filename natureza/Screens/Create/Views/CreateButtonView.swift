@@ -24,7 +24,7 @@ class CreateButtonView: UIView {
         label.font = .systemFont(ofSize: 13, weight: .semibold)
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.textColor = .appBackground2
+        label.textColor = .secondarySystemBackground
         return label
     }()
     
@@ -33,7 +33,7 @@ class CreateButtonView: UIView {
         imageView.image = image
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.tintColor = .appBackground2
+        imageView.tintColor = .secondarySystemBackground
         return imageView
     }()
     

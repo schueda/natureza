@@ -12,14 +12,14 @@ class NotesViewController: UIViewController {
     
     lazy var notesSheet: UIView = {
         let view = UIView()
-        view.backgroundColor = .appBackground1
+        view.backgroundColor = .secondarySystemBackground
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var noteTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .appBackground3
+        textView.backgroundColor = .systemBackground
         textView.layer.cornerRadius = 3
         textView.isEditable = true
         textView.textContainerInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
@@ -76,7 +76,7 @@ extension NotesViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .secondaryLabel  {
             textView.text = nil
-            textView.textColor = .appLabelLight
+            textView.textColor = .label
         }
     }
 

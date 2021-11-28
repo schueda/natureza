@@ -34,7 +34,7 @@ class PhotoViewController: UIViewController {
             textView.textColor = .secondaryLabel
             textView.text = "Escreva uma nota sobre a coleção"
         } else {
-            textView.textColor = .appLabelLight
+            textView.textColor = .label
             textView.text = photo.note
         }
         
@@ -96,7 +96,7 @@ extension PhotoViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .secondaryLabel {
             textView.text = nil
-            textView.textColor = .appLabelLight
+            textView.textColor = .label
         }
     }
 

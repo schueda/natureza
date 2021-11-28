@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Perfil"
+        view.backgroundColor = .systemBackground
         
         setupPlaceHolderView()
     }
