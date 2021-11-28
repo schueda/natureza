@@ -67,6 +67,7 @@ class CollectionViewController: UIViewController {
         let view = NotificationView()
         view.backgroundColor = .appBackground3
         view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
