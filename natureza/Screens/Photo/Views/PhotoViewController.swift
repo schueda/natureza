@@ -32,7 +32,7 @@ class PhotoViewController: UIViewController {
         
         if photo.note.isEmpty {
             textView.textColor = .secondaryLabel
-            textView.text = "Escreva uma nota sobre a coleção"
+            textView.text = "Escreva uma nota sobre a imagem"
         } else {
             textView.textColor = .label
             textView.text = photo.note

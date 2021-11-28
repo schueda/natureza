@@ -44,8 +44,15 @@ class CameraViewModel: CameraViewModelDelegate {
     }
     
     func setOverlay(with collection: PhotoCollection?) -> UIImage? {
-        if let id = collection?.photosIds.last {
-            return photosRepository.getPhotoById(id)?.image
+        if let collection = collection {
+            if let photoBuffer = collection.photosBuffer {
+                if !(photoBuffer.isEmpty) {
+                    return photoBuffer.last?.image
+                }
+            }
+            if let lastSavedPhotoId = collection.photosIds.last {
+                return photosRepository.getPhotoById(lastSavedPhotoId)?.image
+            }
         }
         return photosRepository.getLastPhoto()?.image
     }
