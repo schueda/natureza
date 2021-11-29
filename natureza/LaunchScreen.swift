@@ -9,7 +9,7 @@ import UIKit
 
 class LaunchScreen:  UIViewController {
     
-    lazy var viewBackground: UIView = {
+    @objc lazy var viewBackground: UIView = {
         let view = UIView()
         view.backgroundColor = .tintColor
         
@@ -35,10 +35,13 @@ class LaunchScreen:  UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupViewBackground()
-        spinImage()
         setupLogoNatour()
         setupImageNatour()
+        spinImage()
+        
+        navegation()
     }
     
     
@@ -53,10 +56,10 @@ class LaunchScreen:  UIViewController {
         viewBackground.addSubview(logoNatour)
         logoNatour.snp.makeConstraints { make in
             make.center.equalToSuperview()
-//            make.top.equalTo(346)
-//            make.bottom.equalTo(434)
-//            make.right.equalTo(55)
-//            make.left.equalTo(55)
+            //            make.top.equalTo(346)
+            //            make.bottom.equalTo(434)
+            //            make.right.equalTo(55)
+            //            make.left.equalTo(55)
         }
     }
     
@@ -69,15 +72,25 @@ class LaunchScreen:  UIViewController {
         }
     }
     
-    
+    var count = 0
     func spinImage(){
-        UIView.animate(withDuration: 10.0, animations: {
+        
+        
+        UIView.animate(withDuration: 4.0, animations: {
             self.imageNatour.transform = CGAffineTransform(rotationAngle: (180.0 * .pi) / 180.0)
         })
         
         
     }
     
+    
+    func navegation(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.navigationController?.pushViewController(OnboardingViewController(), animated: true)
+        }
+        
+        
+    }
+    
+    
 }
-
-
