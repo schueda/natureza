@@ -2,6 +2,7 @@ import AVFoundation
 import SnapKit
 import UIKit
 import CameraManager
+import SwiftUI
 
 
 
@@ -22,6 +23,16 @@ class CameraViewController: UIViewController {
         imageView.alpha = 0.0
         imageView.clipsToBounds = true
         return imageView
+    }()
+    
+    lazy var buttonBG: UIView = {
+        let colorView = UIView()
+        view.addSubview(colorView)
+        colorView.translatesAutoresizingMaskIntoConstraints = false
+        colorView.layer.cornerRadius = 60
+        colorView.backgroundColor = .systemBackground
+        colorView.layer.opacity = 0.3
+        return colorView
     }()
     
     lazy var flashButton : UIButton = {
@@ -90,6 +101,8 @@ class CameraViewController: UIViewController {
         return view
     }()
     
+   
+    
     
     @objc func dismissCamera() {
         dismiss(animated: true, completion: nil)
@@ -148,6 +161,7 @@ class CameraViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .secondarySystemBackground
         setupCameraView()
+        setupButtonBGView()
         setupDismissButton()
         setupCaptureButton()
         setupFlashButton()
@@ -174,6 +188,16 @@ class CameraViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         viewModel.cameraManager.addPreviewLayerToView(newView)
+        
+    }
+    
+    func setupButtonBGView() {
+        
+        view.addSubview(buttonBG)
+        buttonBG.snp.makeConstraints { make in
+            make.height.equalTo(100)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+        }
         
     }
     
