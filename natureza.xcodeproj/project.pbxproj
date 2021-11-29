@@ -27,6 +27,7 @@
 		9A19CDA02751040C00627A1D /* Natour-Onboarding-Parte1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A2834F9274FC86600DC2D77 /* Natour-Onboarding-Parte1.mp4 */; };
 		9A19CDA127510EBA00627A1D /* Natour-Onboarding-Parte2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A2834FA274FC86700DC2D77 /* Natour-Onboarding-Parte2.mp4 */; };
 		9A19CDA227510EBF00627A1D /* Natour-Onboarding-Parte3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9A2834F8274FC86600DC2D77 /* Natour-Onboarding-Parte3.mp4 */; };
+		9A3030972751408200E74B68 /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3030962751408200E74B68 /* LaunchScreen.swift */; };
 		9A3DB5732745419200D4AD3F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3DB5722745419200D4AD3F /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		9A2834F8274FC86600DC2D77 /* Natour-Onboarding-Parte3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Natour-Onboarding-Parte3.mp4"; sourceTree = "<group>"; };
 		9A2834F9274FC86600DC2D77 /* Natour-Onboarding-Parte1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Natour-Onboarding-Parte1.mp4"; sourceTree = "<group>"; };
 		9A2834FA274FC86700DC2D77 /* Natour-Onboarding-Parte2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Natour-Onboarding-Parte2.mp4"; sourceTree = "<group>"; };
+		9A3030962751408200E74B68 /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		9A3DB5722745419200D4AD3F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		BACB4279A0495528882EDA81 /* Pods-natureza.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.debug.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.debug.xcconfig"; sourceTree = "<group>"; };
 		F719093FF9D94F525D863EF7 /* Pods-natureza.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-natureza.release.xcconfig"; path = "Target Support Files/Pods-natureza/Pods-natureza.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				6131F54227394A8F00A82704 /* Assets.xcassets */,
 				9A074DFD274BC67300B39D53 /* OnboardingViewController.swift */,
 				9A2834F9274FC86600DC2D77 /* Natour-Onboarding-Parte1.mp4 */,
+				9A3030962751408200E74B68 /* LaunchScreen.swift */,
 			);
 			path = natureza;
 			sourceTree = "<group>";
@@ -138,7 +141,6 @@
 				759941F0274528E600580D14 /* Services */,
 				759941EB2744520E00580D14 /* Models */,
 				759941EA2744520300580D14 /* Views */,
-				759941E9274451FD00580D14 /* VMs */,
 			);
 			path = Gallery;
 			sourceTree = "<group>";
@@ -157,6 +159,7 @@
 				755BB4CF273AA0990055563A /* HomeCollectionViewCell.swift */,
 				6131F53D27394A8C00A82704 /* HomeViewController.swift */,
 				755BB4CD273A9EC10055563A /* HomeCollectionView.swift */,
+				759941E9274451FD00580D14 /* VMs */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				754219852743DADE00A40327 /* AfterShotViewController.swift in Sources */,
 				759941ED2744524B00580D14 /* CollectionModel.swift in Sources */,
 				61DE48C3274A942D00D0FBE5 /* UIColor+.swift in Sources */,
+				9A3030972751408200E74B68 /* LaunchScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

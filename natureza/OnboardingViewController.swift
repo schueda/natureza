@@ -46,7 +46,7 @@ class OnboardingViewController: UIViewController {
         view.backgroundColor = UIColor.appGray4.withAlphaComponent(0.95)
         view.layer.opacity = 85
         view.layer.cornerRadius = 20
-        
+            
         return view
     }()
     
