@@ -73,10 +73,18 @@ extension CollectionsModalViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let collection = indexPath.row == 0 ? PhotoCollection(name: "", photos: [], notification: Notification(), note: "") : collections[indexPath.row - 1]
         
-        guard let photoId = photo.idFromDate else { return }
-        viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
+//        viewModel.savePhotoToCollectionBuffer(photo: photo, collection: collection)
+        if collection.name != "" {
+            viewModel.savePhotoToCollection(photo: photo, collection: collection)
+        }
         
-        navigationController?.pushViewController(CollectionViewController(collection: collection), animated: true)
+        CreateViewController.tabInstance?.presentedViewController?.dismiss(animated: true, completion: nil)
+        CreateViewController.tabInstance?.presentedViewController?.dismiss(animated: false, completion: nil)
+//        dismissFirstVC(animated: true) { vc in
+//            vc as? CameraViewController != nil
+//        }
+        SceneDelegate.appTab?.switchTab(to: .collections)
+//        navigationController?.pushViewController(CollectionViewController(collection: collection), animated: true)
     }
 }
 

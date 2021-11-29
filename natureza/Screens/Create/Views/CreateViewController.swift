@@ -8,6 +8,7 @@
 import UIKit
 
 class CreateViewController: UIViewController {
+    static weak var tabInstance: CreateViewController?
     
     lazy var buttonsStack: UIStackView = {
         let stack = UIStackView()
