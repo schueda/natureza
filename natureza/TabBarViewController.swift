@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 
 
-class TabBarViewController: UITabBarController{
+class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class TabBarViewController: UITabBarController{
     }
     
     private func getHomeViewController() -> UINavigationController {
-        let viewController = HomeViewController()
+        let viewController = HomeViewController(viewModel: HomeViewModel())
         viewController.tabBarItem = UITabBarItem(title: "Coleções", image: UIImage(systemName: "photo.on.rectangle")!, tag: 0)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
@@ -32,42 +32,22 @@ class TabBarViewController: UITabBarController{
     
     private func getCreateViewController() -> UINavigationController {
         let viewController = CreateViewController()
-        viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle.fill")!, tag: 1)
+        viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle")!, tag: 1)
         let navigationController = UINavigationController(rootViewController: viewController)
+        CreateViewController.tabInstance = viewController
         return navigationController
     }
     
     private func getProfileViewController() -> UINavigationController {
-        let viewController =  ProfileVC()
+        let viewController =  ProfileViewController()
         viewController.tabBarItem = UITabBarItem(title: "Perfil", image: UIImage(systemName: "person")!, tag: 2)
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
     }
 }
     
-class ProfileVC: UIViewController{
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemGreen
+extension TabBarViewController: TabChangeable {
+    func switchTab(to tab: IndexedTab) {
+        selectedIndex = tab.rawValue
     }
 }
-
-
-#if DEBUG
-import SwiftUI
-struct TabBarViewController_Preview: PreviewProvider {
-    static var previews: some View {
-        ContentView().previewDevice("iPhone 12")
-    }
-
-    struct ContentView: UIViewControllerRepresentable {
-
-        func makeUIViewController(context: Context) -> UIViewController {
-            UINavigationController(rootViewController: TabBarViewController())
-        }
-
-        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-        }
-    }
-}
-#endif
