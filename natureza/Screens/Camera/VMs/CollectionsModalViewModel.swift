@@ -27,4 +27,11 @@ class CollectionsModalViewModel {
         
         collection.photosBuffer?.append(photo)
     }
+    
+    func savePhotoToCollection(photo: Photo, collection: PhotoCollection) {
+        photosRepository.SavePhoto(photo)
+        guard let id = photo.idFromDate else { return }
+        collection.photosIds.append(id)
+        collectionsRepository.saveCollection(collection)
+    }
 }

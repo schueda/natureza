@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 
 
-class TabBarViewController: UITabBarController{
+class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,7 @@ class TabBarViewController: UITabBarController{
         let viewController = CreateViewController()
         viewController.tabBarItem = UITabBarItem(title: "Criar", image: UIImage(systemName: "plus.circle")!, tag: 1)
         let navigationController = UINavigationController(rootViewController: viewController)
+        CreateViewController.tabInstance = viewController
         return navigationController
     }
     
@@ -45,3 +46,8 @@ class TabBarViewController: UITabBarController{
     }
 }
     
+extension TabBarViewController: TabChangeable {
+    func switchTab(to tab: IndexedTab) {
+        selectedIndex = tab.rawValue
+    }
+}
