@@ -85,7 +85,7 @@ class LaunchScreen:  UIViewController {
     
     
     func navegation(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.navigationController?.pushViewController(OnboardingViewController(), animated: true)
         }
         
